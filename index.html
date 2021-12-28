@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>氟产业开发区智慧园区管理平台</title>
+  <link rel="stylesheet/less"
+        type="text/css"
+        href="assets/index/assets/style/style.less" />
+  <!-- <link rel="stylesheet"
+        href="assets/index/assets/style/swiper-bundle.min.css"> -->
+  <script src="assets/index/assets/js/less.min.js"></script>
+  <script src="assets/index/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/index/assets/js/echarts.js"></script>
+  <script src="assets/index/assets/js/moment.js"></script>
+  <script src="assets/index/assets/js/test.js"></script>
+  <!-- <script src="assets/index/assets/js/swiper-bundle.min.js"></script> -->
+
+  <!-- 引入 layui.css -->
+  <link rel="stylesheet"
+        type="text/css"
+        href="https://www.layuicdn.com/layui/css/layui.css" />
+
+</head>
+
+<body>
+  <div class="page_root">
+    <div id="mask"
+         class="mask">
+    </div>
+    <div class="top_mask"></div>
+    <div class="bottom_mask"></div>
+    <section class="header">
+      <!-- 天气 -->
+      <div id="he-plugin-simple"></div>
+
+      <div class="header_title">氟产业开发区智慧园区管理平台</div>
+
+      <div class="header_time">
+        <!-- 时间 -->
+        <span>
+          <span id="show-date"></span><span id="show-time"></span>
+        </span>
+        <img src="assets/index/assets/images/exit.png"
+             alt="">
+      </div>
+    </section>
+    <div class="left">
+      <div class="box device">
+        <div class="box_title">设备管理</div>
+        <div class="select_bar">
+          <div class="item"
+               onclick="onSelectItem(1)">
+            <span class="select_item selected"></span> 消防设备
+          </div>
+          <div class="item"
+               onclick="onSelectItem(2)">
+            <span class="select_item"></span> 易燃材料
+          </div>
+          <div class="item"
+               onclick="onSelectItem(3)">
+            <span class="select_item"></span> 管理人员
+          </div>
+        </div>
+        <div id="left_top_chart"
+             class="left_top_chart"></div>
+      </div>
+      <div class="box new">
+        <div class="box_title">最新消息</div>
+        <div id="last-news"
+             class="box_content">
+        </div>
+      </div>
+    </div>
+    <div class="center_bottom">
+      <div class="center_bottom_item">
+        <div class="imgBox">
+          <img class="img1"
+               src="assets/index/assets/images/icon1.png"
+               alt="">
+          <img class="img2"
+               src="assets/index/assets/images/icon2.png"
+               alt="">
+        </div>
+        <div class="info">
+          <div class="label info_label">0</div>
+          <div class="value">消防设备</div>
+        </div>
+      </div>
+
+      <div class="center_bottom_item">
+        <div class="imgBox">
+          <img class="img1"
+               src="assets/index/assets/images/icon1.png"
+               alt="">
+          <img class="img2"
+               src="assets/index/assets/images/icon3.png"
+               alt="">
+        </div>
+        <div class="info">
+          <div class="label info_label">0</div>
+          <div class="value">易燃材料</div>
+        </div>
+      </div>
+
+      <div class="center_bottom_item">
+        <div class="imgBox">
+          <img class="img1"
+               src="assets/index/assets/images/icon1.png"
+               alt="">
+          <img class="img2"
+               src="assets/index/assets/images/icon4.png"
+               alt="">
+        </div>
+        <div class="info">
+          <div class="label info_label">0</div>
+          <div class="value">管理人员</div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box percentage">
+        <div class="box_title">厂区设备百分比</div>
+        <div id="right_top_chart"
+             class="right_top_chart"></div>
+      </div>
+      <div class="box distributed">
+        <div class="box_title">厂区设备分布</div>
+        <div id="right_center_chart"
+             class="right_center_chart"></div>
+      </div>
+      <div class="box date">
+        <div class="box_title">时间选择</div>
+        <div class="date_time_select_box">
+          <input type="text"
+                 value="2021-12-20"
+                 class="layui-input date_time_select"
+                 id="test1">
+        </div>
+      </div>
+    </div>
+    <section class="footer"></section>
+
+    <section id="layer"
+             class="layer">
+      <div class="layer_content">
+        <div class="layer_content_title">
+          <span></span><span id="info-title">金凯厂区介绍</span>
+          <img src="assets/index/assets/images/close.png"
+               alt=""
+               onclick="layerClose()">
+        </div>
+
+        <div class="layer_content_children">
+          <div class="layer_content_children_left">
+            <div id="bigimg"
+                 class="bigimg">
+              <div id="layui-tab"
+                   class="layui-tab">
+                <ul id="tab_title"
+                    class="layui-tab-title">
+                </ul>
+                <div id="tab_content"
+                     class="layui-tab-content">
+                </div>
+              </div>
+              <img id="bigimg-img"
+                   src=""
+                   alt="">
+              <img class="changeImg"
+                   src="./assets/index/assets/images/change.png"
+                   alt=""
+                   onclick="addCircle(addtype)">
+            </div>
+            <div class="smallImg">
+              <div id="smallImg_item1"
+                   class="item">
+              </div>
+              <div id="smallImg_item2"
+                   class="item">
+              </div>
+            </div>
+          </div>
+          <div class="layer_content_children_right">
+            <div class="date_select">
+              <input class="date_time_select2"
+                     type="text"
+                     value="2021-12-20"
+                     id="test2">
+            </div>
+
+            <div class="icon_bar">
+              <div class="item">
+                <div class="icons">
+                  <img src="assets/index/assets/images/icon7.png"
+                       alt="">
+                  <img src="assets/index/assets/images/icon8.png"
+                       alt="">
+                </div>
+                <span class="label">消防设备</span>
+                <span class="value"
+                      id="article_device">0</span>
+              </div>
+              <div class="item">
+                <div class="icons">
+                  <img src="assets/index/assets/images/icon9.png"
+                       alt="">
+                  <img src="assets/index/assets/images/icon10.png"
+                       alt="">
+                </div>
+                <span class="label">易燃材料</span>
+                <span class="value"
+                      id="article_meta">0</span>
+              </div>
+              <div class="item">
+                <div class="icons">
+                  <img src="assets/index/assets/images/icon11.png"
+                       alt="">
+                  <img src="assets/index/assets/images/icon12.png"
+                       alt="">
+                </div>
+                <span class="label">管理人员</span>
+                <span class="value"
+                      id="article_users">0</span>
+              </div>
+            </div>
+
+            <div id="info_bar"
+                 class="info_bar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
+
+<!-- 引入 layui.js -->
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+
+
+<script type="text/javascript">
+  function encodeHtml(str) {
+    var encodedStr = "";
+    if (str == "") return encodedStr;
+    else {
+      for (var i = 0; i < str.length; i++) {
+        encodedStr += "&#" + str.substring(i, i + 1).charCodeAt().toString(10) + ";";
+      }
+    }
+    return encodedStr;
+  }
+
+  let layerType = 1
+  let currentArticle = ''
+  let currentTime = moment(new Date()).format('YYYY-MM-DD')
+  let currentName = '全部厂区'
+
+  function itemonClick(type, name = undefined, time = moment(new Date()).format('YYYY-MM-DD')) {
+    layerType = type
+    const imgArr = document.getElementsByClassName('smallImg_content_img')
+    const layuiTab = document.getElementById('layui-tab')
+    const bigimgImg = document.getElementById('bigimg-img')
+    let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test'
+    let firstUrl = url + '/getBaseInfo'
+    let secondUrl = url + '/getModifyInfo'
+    if (name) {
+      firstUrl = firstUrl + '/article_id/' + name
+      secondUrl = secondUrl + '/article_id/' + name
+    }
+
+    if (time) {
+      firstUrl = firstUrl + '/time/' + time
+      secondUrl = secondUrl + '/time/' + time
+    }
+    if (type === 1) {
+      $("div").remove(".circle");
+
+      $.get(firstUrl, (res) => {
+        const { data: data1 } = JSON.parse(res)
+        const { meta_img, meta_content1, meta_content2, article_name } = data1[0]
+
+        $('#tab_title').html('')
+        $('#tab_content').html('')
+        for (let index = 0; index < meta_img.length; index++) {
+          const element = meta_img[index];
+          $('#tab_title').append(
+            index === 0 ? '<li class="layui-this">' + '图' + (index + 1) + '</li>' : '<li>' + '图' + (index + 1) + '</li>'
+          )
+          $('#tab_content').append(
+            index === 0 ? '<div class="layui-tab-item layui-show"><img src="' + element.file_path + '" alt=""></div>' : '<div class="layui-tab-item"><img src="' + element.file_path + '" alt=""></div>'
+          )
+        }
+
+        let html1 = $.parseHTML(meta_content1)
+        $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
+        $("#smallImg_item1").append(html1)
+
+        let html2 = $.parseHTML(meta_content2)
+        $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
+        $("#smallImg_item2").append(html2)
+
+        $("#info-title").html(article_name + "厂区建筑物介绍");
+      })
+
+      $.get(secondUrl, (res) => {
+        const { data: data2 } = JSON.parse(res)
+        let arr = [];
+        for (let index = 0; index < data2.length; index++) {
+          const element = data2[index];
+          const time = Number(element.modify_at + '' + '000')
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '消防设备' + element.article_device + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '易燃材料' + element.article_meta + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '管理人员' + element.article_users + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '字段4' + element.article_field4 + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '字段5' + element.article_field5 + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '字段6' + element.article_field6 + '台'
+          })
+        }
+
+        $('#info_bar').html('')
+
+        for (let index = 0; index < arr.length; index++) {
+          const element = arr[index];
+          $('#info_bar').append(
+            '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
+          )
+        }
+      })
+
+      layuiTab.style.display = 'flex';
+      bigimgImg.style.display = 'none';
+
+      for (let index = 0; index < imgArr.length; index++) {
+        const element = imgArr[index];
+        element.style.display = 'block'
+      }
+    } else {
+      addCircle(true)
+
+      $.get(firstUrl, (res) => {
+        const { data: data1 } = JSON.parse(res)
+        const { base_img, article_device, article_meta, article_users, base_info, base_safe, article_name } = data1[0]
+
+        bigimgImg.src = base_img.file_path
+        const articleDevice = document.getElementById('article_device')
+        const articleMeta = document.getElementById('article_meta')
+        const articleUsers = document.getElementById('article_users')
+        articleDevice.innerHTML = article_device
+        articleMeta.innerHTML = article_meta
+        articleUsers.innerHTML = article_users
+
+        let html1 = $.parseHTML(base_info)
+        $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img1.png">厂区简介</div>')
+        $("#smallImg_item1").append(html1)
+
+        let html2 = $.parseHTML(base_safe)
+        $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img2.png">应急消防救援</div>')
+        $("#smallImg_item2").append(html2)
+
+        $("#info-title").html(article_name + "厂区介绍");
+      })
+
+      $.get(secondUrl, (res) => {
+        const { data: data2 } = JSON.parse(res)
+        let arr = [];
+        for (let index = 0; index < data2.length; index++) {
+          const element = data2[index];
+          const time = Number(element.modify_at + '' + '000')
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '消防设备' + element.article_device + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '易燃材料' + element.article_meta + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '管理人员' + element.article_users + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '字段4' + element.article_field4 + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '字段5' + element.article_field5 + '台'
+          })
+          arr.push({
+            title: element.article_name,
+            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+            content: '字段6' + element.article_field6 + '台'
+          })
+        }
+
+        $('#info_bar').html('')
+
+        for (let index = 0; index < arr.length; index++) {
+          const element = arr[index];
+          $('#info_bar').append(
+            '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
+          )
+        }
+      })
+
+      for (let index = 0; index < imgArr.length; index++) {
+        const element = imgArr[index];
+        element.style.display = 'none'
+      }
+      layuiTab.style.display = 'none'
+      bigimgImg.style.display = 'block'
+    }
+    const layer = document.getElementById('layer')
+    layer.style.zIndex = 6
+    layer.style.opacity = 1
+  }
+
+  addtype = true
+
+  function addCircle(type) {
+    addtype = !type
+    if (type) {
+      $('#bigimg').append(
+        '<div class="circle"><div class="bac"></div><div class="chil1"></div><div class="chil2"></div></div>'
+      )
+      $(".circle").click(() => {
+        itemonClick(1, currentArticle, currentTime)
+      });
+    } else {
+      $("div").remove(".circle");
+    }
+
+
+
+  }
+
+  function layerClose() {
+    const layer = document.getElementById('layer')
+    layer.style.zIndex = -1
+    layer.style.opacity = 0;
+    return;
+    if (layerType === 2) {
+      itemonClick(1)
+    } else {
+      const layer = document.getElementById('layer')
+      layer.style.zIndex = -1
+      layer.style.opacity = 0
+    }
+  }
+
+  //本地调试
+  //var site = "http://fuchanye2.host/index.php?s=";
+  //服务器调试
+  var site = "http://tp.naisigo.com/fuchanye/web/index.php?s=";
+
+  onSelectItem(1)
+
+  function onSelectItem(type) {
+    const elements = document.getElementsByClassName('select_item')
+    for (let index = 0; index < elements.length; index++) {
+      const element = elements[index];
+      element.className = 'select_item'
+    }
+    elements[type - 1].className = 'select_item selected'
+
+    $.getJSON(site + "/api/Test/getDevicemanage/type/" + type, function (data, status) {
+      const { data: data1, dev_cnt, meta_cnt, user_cnt } = data
+      histogram(data1);
+
+      const elements = document.getElementsByClassName('info_label')
+      elements[0].innerHTML = dev_cnt
+      elements[1].innerHTML = meta_cnt
+      elements[2].innerHTML = user_cnt
+    });
+  }
+
+  // 柱状图
+  function histogram(data1) {
+    var myChart = echarts.init(document.getElementById('left_top_chart'));
+    var xData2 = ["01", "02", "03", "04", "05", "06", "07", '08', '09', '10', '11', '12'];
+
+    var data1 = data1;
+
+    var path = 'path://M214,1079l8-6h16l8,6-8,6H222Z';
+    let colorList = {
+      type: 'linear',
+      x: 1,
+      y: 0,
+      x2: 0,
+      y2: 0,
+      colorStops: [{
+        offset: 0,
+        color: 'RGBA(43,102,139,0.6)',
+      }, {
+        offset: .2,
+        color: 'RGBA(43,102,139,0.9)'
+      }, {
+        offset: .2,
+        color: 'RGBA(56,153,190,0.8)'
+      }, {
+        offset: .5,
+        color: 'RGBA(56,153,190,0.9)'
+      }, {
+        offset: .8,
+        color: 'RGBA(56,153,190,0.8)'
+      }, {
+        offset: .8,
+        color: 'RGBA(43,102,139,0.9)'
+      }, {
+        offset: 1,
+        color: 'RGBA(43,102,139,0.6)'
+      }],
+      global: false // 缺省为 false
+    }
+    option = {
+      grid: {
+        top: '5%',
+        left: '16%',
+        // right: '20%',
+        bottom: '25%'
+      },
+      dataZoom: {
+        type: 'slider',
+        show: true,
+        bottom: '13%',
+        start: 0,
+        end: 50,
+        height: 12,
+        dataBackground: {
+          lineStyle: {
+            opacity: 0
+          },
+          areaStyle: {
+            opacity: 0
+          }
+        },
+        selectedDataBackground: {
+          lineStyle: {
+            opacity: 0
+          },
+          areaStyle: {
+            opacity: 0
+          }
+        },
+        zoomLock: true,
+        borderColor: 'rgba(0, 0, 0, 0)',
+        handleIcon: '',
+        fillerColor: 'rgba(0, 0, 0, 0)',
+        moveHandleStyle: {
+          color: 'rgba(64, 158, 255, 0.3)'
+        }
+      },
+      xAxis: {
+        axisLabel: {
+          interval: 0,
+          textStyle: {
+            color: 'rgba(0, 162, 255, 1)',
+            fontSize: 12
+          },
+        },
+        splitLine: {
+          show: false
+        },
+        axisLine: {
+          lineStyle: {
+            color: 'rgba(0, 162, 255, 0.4)',
+            width: 1,
+          }
+        },
+        splitArea: {
+          show: false,
+        },
+        axisTick: {
+          show: false
+        },
+        data: xData2
+      },
+      yAxis: {
+        axisLine: {
+          show: false
+        },
+        axisLabel: {
+          interval: 0,
+          textStyle: {
+            color: 'rgba(0, 162, 255, 1)',
+            fontSize: 12
+          },
+          margin: 20,
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: 'rgba(0, 135, 215, 0.2)',
+            type: 'dashed'
+          },
+        },
+        axisTick: {
+          show: false
+        },
+      },
+      series: [{
+        name: "",
+        type: "pictorialBar",
+        symbol: path,
+        symbolSize: [25, 25],
+        symbolOffset: [0, 0],
+        z: 1,
+        itemStyle: {
+          opacity: 1,
+          color: colorList,
+          shadowColor: 'rgba(115, 106, 28, .7)',
+          shadowBlur: 3,
+          shadowOffsetX: 0,
+          shadowOffsetY: 2
+        },
+        data: data1
+      }, {
+        name: '2020',
+        type: 'bar',
+        symbol: path,
+        barWidth: 25,
+        barGap: '-100%',
+        z: 10,
+        itemStyle: {
+          color: colorList
+        },
+        data: data1
+      }, {
+        name: "",
+        type: "pictorialBar",
+        symbol: path,
+        symbolSize: [25, 10],
+        symbolOffset: [0, 0],
+        z: 12,
+        itemStyle: {
+          opacity: 1,
+          color: '#69d8ff'
+        },
+        symbolPosition: "end",
+        data: data1
+      },]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  }
+
+  function initChart(time = moment(new Date()).format('YYYY-MM-DD'), id) {
+    let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getCntInfo/time/' + time
+    if (id) {
+      url = url + '/article_id/' + id
+    }
+    $.get(url, (res) => {
+      const { device_list, meta_list, user_list, sum_device, sum_meta, sum_user } = JSON.parse(res)
+
+
+      // 折线图
+      let xLabel = ['1', '2', '3', '4', '5', '6']
+      let lineData1 = user_list
+      let lineData2 = device_list
+      let lineData3 = meta_list
+
+      lineoption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            lineStyle: {
+              color: {
+                type: 'linear',
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [{
+                  offset: 0,
+                  color: 'rgba(126,199,255,0)' // 0% 处的颜色
+                }, {
+                  offset: 0.5,
+                  color: 'rgba(126,199,255,1)' // 100% 处的颜色
+                }, {
+                  offset: 1,
+                  color: 'rgba(126,199,255,0)' // 100% 处的颜色
+                }],
+                global: false // 缺省为 false
+              }
+            },
+          }
+        },
+        legend: {
+          align: "left",
+          right: '20%',
+          top: '10%',
+          type: 'plain',
+          textStyle: {
+            color: 'rgba(0, 162, 255, 1)',
+            fontSize: 12
+          },
+          // icon:'rect',
+          itemGap: 25,
+          itemWidth: 18,
+          icon: 'path://M0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z',
+
+          data: [{
+            name: '管理人员'
+          }, {
+            name: '消防设备'
+          }, {
+            name: '易燃材料'
+          }]
+        },
+        grid: {
+          top: '20%',
+          left: '15%',
+          // right: '20%',
+          bottom: '20%'
+        },
+        xAxis: [{
+          type: 'category',
+          boundaryGap: false,
+          axisLine: { //坐标轴轴线相关设置。数学上的x轴
+            show: true,
+            lineStyle: {
+              color: 'rgba(0, 162, 255, 0.4)'
+            },
+          },
+          axisLabel: { //坐标轴刻度标签的相关设置
+            textStyle: {
+              color: 'rgba(0, 162, 255, 1)',
+              fontSize: 12
+            },
+            formatter: function (data) {
+              return data
+            }
+          },
+          splitLine: {
+            show: false,
+            lineStyle: {
+              color: '#192a44'
+            },
+          },
+          axisTick: {
+            show: false,
+          },
+          data: xLabel
+        }],
+        yAxis: [{
+          name: '',
+          nameTextStyle: {
+            color: 'rgba(0, 162, 255, 1)',
+            fontSize: 12,
+            padding: 10
+          },
+          min: 0,
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(0, 135, 215, 0.2)',
+              type: 'dashed'
+            },
+          },
+          axisLine: {
+            show: false,
+          },
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: 'rgba(0, 162, 255, 1)',
+              padding: 4
+            },
+            formatter: function (value) {
+              if (value === 0) {
+                return value
+              }
+              return value
+            }
+          },
+          axisTick: {
+            show: false,
+          },
+        }],
+        series: [{
+          name: '管理人员',
+          type: 'line',
+          symbol: 'circle', // 默认是空心圆（中间是白色的），改成实心圆
+          showAllSymbol: true,
+          symbolSize: 0,
+          smooth: true,
+          lineStyle: {
+            normal: {
+              width: 2,
+              color: "rgba(113, 220, 136, 1)", // 线条颜色
+            },
+          },
+          itemStyle: {
+            color: "rgba(113, 220, 136, 1)",
+
+          },
+          tooltip: {
+            show: true
+          },
+          areaStyle: { //区域填充样式
+            normal: {
+              //线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: "rgba(113, 220, 136, 0.3)"
+              }, {
+                offset: 1,
+                color: "rgba(113, 220, 136, 0)"
+              }], false),
+              shadowColor: 'rgba(113, 220, 136, 0.5)', //阴影颜色
+              shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
+            }
+          },
+          data: lineData1
+        }, {
+          name: '消防设备',
+          type: 'line',
+          symbol: 'circle', // 默认是空心圆（中间是白色的），改成实心圆
+          showAllSymbol: true,
+          symbolSize: 0,
+          smooth: true,
+          lineStyle: {
+            normal: {
+              width: 2,
+              color: "rgba(0, 254, 255, 1)", // 线条颜色
+            },
+          },
+          itemStyle: {
+            color: "rgba(0, 254, 255, 1)",
+
+          },
+          tooltip: {
+            show: true
+          },
+          areaStyle: { //区域填充样式
+            normal: {
+              //线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: "rgba(0, 254, 255, 0.3)"
+              }, {
+                offset: 1,
+                color: "rgba(0, 254, 255, 0)"
+              }], false),
+              shadowColor: 'rgba(0, 254, 255, 0.5)', //阴影颜色
+              shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
+            }
+          },
+          data: lineData2
+        }, {
+          name: '易燃材料',
+          type: 'line',
+          symbol: 'circle', // 默认是空心圆（中间是白色的），改成实心圆
+          showAllSymbol: true,
+          symbolSize: 0,
+          smooth: true,
+          lineStyle: {
+            normal: {
+              width: 2,
+              color: "RGBA(15, 130, 222, 1)", // 线条颜色
+            }
+          },
+          itemStyle: {
+            color: "RGBA(15, 130, 222, 1)",
+
+          },
+          tooltip: {
+            show: true
+          },
+          areaStyle: { //区域填充样式
+            normal: {
+              //线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: "rgba(15, 130, 222, 0.3)"
+              }, {
+                offset: 1,
+                color: "rgba(15, 130, 222, 0)"
+              }], false),
+              shadowColor: 'rgba(15, 130, 222, 0.5)', //阴影颜色
+              shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
+            }
+          },
+          data: lineData3
+        }]
+      };
+      let len = 0
+      // setInterval(() => {
+      //     if (len === xLabel.length) {
+      //         len = 0
+      //     }
+      //     myChart.dispatchAction({
+      //         type: 'showTip',
+      //         seriesIndex: 0,
+      //         dataIndex: len,
+      //     })
+      //     len++
+      // }, 1000);
+
+      var myChart2 = echarts.init(document.getElementById('right_center_chart'));
+      // 使用刚指定的配置项和数据显示图表。
+      myChart2.setOption(lineoption);
+
+
+      // 饼图
+      //颜色16进制换算rgba,添加透明度
+      function hexToRgba(hex, opacity) {
+        return (
+          'rgba(' +
+          parseInt('0x' + hex.slice(1, 3)) +
+          ',' +
+          parseInt('0x' + hex.slice(3, 5)) +
+          ',' +
+          parseInt('0x' + hex.slice(5, 7)) +
+          ',' +
+          opacity +
+          ')'
+        );
+      }
+
+      // 数据
+      chartdata = [{
+        name: '消防设备',
+        value: sum_device,
+      }, {
+        name: '易燃材料',
+        value: sum_meta,
+      }, {
+        name: '管理人员',
+        value: sum_user,
+      }];
+      radius = ['50%', '54%'];
+      // 颜色系列
+      color = ['#37FFC9', '#FFE777', '#19D6FF', '#32A1FF', '#cccccc', '#ff1111'];
+      labelshow = true;
+      centerimg = true;
+      lineshow = false;
+      let color1 = [],
+        color2 = [],
+        color3 = [];
+      // 设置每层圆环颜色和添加间隔的透明色
+      color.forEach((item) => {
+        color1.push(item, 'transparent');
+        color2.push(hexToRgba(item, 0.7), 'transparent');
+        color3.push(hexToRgba(item, 0.4), 'transparent');
+      });
+      let data2 = [];
+      let sum = 0;
+      // 根据总值设置间隔值大小
+      chartdata.forEach((item) => {
+        sum += Number(item.value);
+      });
+      // 给每个数据后添加特定的透明的数据形成间隔
+      chartdata.forEach((item, index) => {
+        if (item.value !== 0) {
+          data2.push(item, {
+            name: '',
+            value: sum / 100,
+            labelLine: {
+              show: false,
+              lineStyle: {
+                color: 'transparent',
+              },
+            },
+            itemStyle: {
+              color: 'transparent',
+            },
+          });
+        }
+      });
+      // 每层圆环大小
+      let radius2 = [Number(radius[1].split('%')[0]) + 0 + '%', Number(radius[1].split('%')[0]) + 4 + '%'];
+      let radius3 = [Number(radius[1].split('%')[0]) + 4 + '%', Number(radius[1].split('%')[0]) + 8 + '%'];
+      pieoption = {
+        title: {
+          show: true,
+          text: currentName,
+          textAlign: 'center',
+          textVerticalAlign: 'center',
+          left: '35%',
+          top: '50%',
+          textStyle: {
+            color: 'RGBA(0, 182, 243, 1)'
+          }
+        },
+        grid: {
+          top: '20%',
+          left: '0',
+          // right: '20%',
+          bottom: '20%'
+        },
+        tooltip: {
+          formatter: (params) => {
+            if (params.name !== '') {
+              return params.name + ' : ' + params.value;
+            }
+          },
+        },
+        legend: {
+          show: true,
+          right: '16%',
+          top: '15%',
+          formatter: (name) => {
+            const finded = chartdata.find(item => item.name === name)
+            const value = (finded.value / (sum_device + sum_meta + sum_user) * 100).toFixed(2) + '%'
+            return `{b|${name}}\n{c|${value}}`
+          },
+          itemWidth: 2,
+          itemHeight: 48,
+          itemGap: 36,
+          textStyle: {
+            rich: {
+              b: {
+                color: 'RGBA(0, 138, 255, 1)',
+                fontSize: 18,
+                lineHeight: 40
+              },
+              c: {
+                color: '#fff',
+                fontSize: 16,
+              },
+            }
+          }
+        },
+        series: [
+          // 最外层圆环
+          {
+            type: 'pie',
+            radius: radius3,
+            center: ['35%', '50%'],
+            hoverAnimation: false,
+            startAngle: 90,
+            selectedMode: 'single',
+            selectedOffset: 0,
+            itemStyle: {
+              normal: {
+                color: (params) => {
+                  return color1[params.dataIndex];
+                },
+              },
+            },
+            label: {
+              show: false,
+            },
+            labelLine: {
+              show: false,
+            },
+            data: data2,
+            z: 666,
+          }, {
+            type: 'pie',
+            radius: radius2,
+            center: ['35%', '50%'],
+            hoverAnimation: false,
+            startAngle: 90,
+            selectedMode: 'single',
+            selectedOffset: 0,
+            itemStyle: {
+              normal: {
+                color: (params) => {
+                  return color2[params.dataIndex];
+                },
+              },
+            },
+            label: {
+              show: false,
+            },
+            data: data2,
+            z: 666,
+          }, {
+            type: 'pie',
+            radius: radius,
+            center: ['35%', '50%'],
+            hoverAnimation: false,
+            startAngle: 90,
+            selectedMode: 'single',
+            selectedOffset: 0,
+            itemStyle: {
+              normal: {
+                color: (params) => {
+                  return color3[params.dataIndex];
+                },
+              },
+            },
+            label: {
+              show: false,
+            },
+            data: data2,
+            z: 666,
+          },
+        ],
+      };
+
+      var myChart3 = echarts.init(document.getElementById('right_top_chart'));
+      // 使用刚指定的配置项和数据显示图表。
+      myChart3.setOption(pieoption);
+    })
+  }
+
+
+  window.onload = function () {
+
+    // layui.use(['element', 'Tab'], function () {
+    // });
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#test1',
+        done: (value, date, endDate) => {
+          initChart(value)
+        }
+      });
+    });
+
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#test2',
+        done: (value, date, endDate) => {
+          currentTime = value
+          itemonClick(2, currentArticle, value)
+        }
+      });
+    });
+
+
+    $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/test/getList', (res) => {
+      const { data } = JSON.parse(res)
+      const poins = data.map(item => {
+        return {
+          name: item.article_id,
+          name2: item.name,
+          symbol: 'pin',
+          coord: [Number(item.map_left), Number(item.map_top)],
+          itemStyle: {
+            color: 'red'
+          }
+        }
+      })
+
+      $.get('assets/index/assets/svg/index.svg', (svg) => {
+        // 页面中部地图点击事件
+        var myChart1 = echarts.init(document.getElementById('mask'));
+        var option1;
+
+        echarts.registerMap('garden-map', {
+          svg: svg
+        });
+        option1 = {
+          tooltip: {
+            trigger: 'item',
+            formatter: (params) => {
+              const { data } = params
+              return data.name2
+            }
+          },
+          series: [{
+            name: '金特莱',
+            type: 'map',
+            map: 'garden-map',
+            roam: true,
+            zoom: 2,
+            left: '15%',
+            emphasis: {
+              label: {
+                show: false
+              }
+            },
+            selectedMode: false,
+            markPoint: {
+              data: poins
+            }
+          }]
+        };
+        myChart1.setOption(option1);
+
+        for (let index = 0; index < poins.length; index++) {
+          const element = poins[index];
+          myChart1.on('mouseover', {
+            name: element.name + ''
+          }, (params) => {
+            const { data } = params
+            const test1 = document.getElementById('test1')
+            currentName = data.name2
+            initChart(test1.value, params.name)
+          });
+
+          myChart1.on('click', {
+            name: element.name + ''
+          }, (params) => {
+            currentArticle = params.name
+            itemonClick(2, params.name);
+          });
+        }
+
+      });
+
+
+    })
+    // 页面中部地图点击事件
+
+
+
+
+    // index左侧 设备管理
+    // 基于准备好的dom，初始化echarts实例
+    // var data1 = [100, 60, 130, 170, 140, 100, 140, 100, 60, 130, 170, 140];
+
+    //最新消息
+    $.getJSON(site + "/api/Test/getLastModifyInfo", function (data, status) {
+      var list = data.data;
+      var html = "";
+      for (var i = 0; i < list.length; i++) {
+
+        var g = parseInt(list[i].create_at.toString() + "000"); //定义一个时间戳变量
+        var d = new Date(g);   //创建一个指定的日期对象
+        var create_time = formatDate(d);
+
+
+
+        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '消防设备' + list[i].article_device + '台' + '</div></div></div>';
+        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '易燃材料' + list[i].article_meta + '台' + '</div></div></div>';
+        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '管理人员' + list[i].article_users + '台' + '</div></div></div>';
+        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段4' + list[i].article_field4 + '台' + '</div></div></div>';
+        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段5' + list[i].article_field5 + '台' + '</div></div></div>';
+        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段6' + list[i].article_field6 + '台' + '</div></div></div>';
+
+
+
+      }
+
+      $("#last-news").html(html);
+
+      setTimeout(function () {
+        $('#last-news').myScroll({
+          speed: 60,
+          rowHeight: 72
+        });
+      }, 500);
+
+    });
+    //最新消息 end
+
+    initChart()
+  }
+</script>
+<!-- 和风天气 -->
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "modules": "01234",
+      "background": "5",
+      "tmpColor": "FFFFFF",
+      "tmpSize": "16",
+      "cityColor": "FFFFFF",
+      "citySize": "16",
+      "aqiColor": "FFFFFF",
+      "aqiSize": "16",
+      "weatherIconSize": "24",
+      "alertIconSize": "18",
+      "padding": "10px 10px 10px 10px",
+      "shadow": "0",
+      "language": "auto",
+      "fixed": "false",
+      "vertical": "top",
+      "horizontal": "left",
+      "key": "3968b2efc06e4ec79c69fb8e6f8dcc40"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+<!-- 和风天气 end-->
+
+<script>
+  $(function () {
+    setInterval("getTime();", 1000); //每隔一秒执行一次 
+    getNowFormatDate();
+    getTime();
+    //$("#show-time").html("00" + ":" + "00" + ":" + "00");
+
+  })
+  //取得系统当前时间 
+  function getTime() {
+    var myDate = new Date();
+    var date = myDate.toLocaleDateString();
+    var hours = myDate.getHours();
+    var minutes = myDate.getMinutes();
+    var seconds = myDate.getSeconds();
+    if (hours < 10) {
+      hours = "0" + hours;
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
+    $("#show-time").html(hours + ":" + minutes + ":" + seconds); //将值赋给div 
+  }
+
+
+  // 获取当前日期
+  function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+      month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = "0" + strDate;
+    }
+    var currentdate = year + seperator1 + month + seperator1 + strDate;
+    $("#show-date").html(currentdate);
+    $("#test1").val(currentdate);
+    $("#test2").val(currentdate);
+  }
+
+
+  function formatDate(now) {
+    var year = now.getFullYear();  //取得4位数的年份
+    var month = now.getMonth() + 1;  //取得日期中的月份，其中0表示1月，11表示12月
+    var date = now.getDate();      //返回日期月份中的天数（1到31）
+    var hour = now.getHours();     //返回日期中的小时数（0到23）
+    var minute = now.getMinutes(); //返回日期中的分钟数（0到59）
+    var second = now.getSeconds(); //返回日期中的秒数（0到59）
+    return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+  }
+</script>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY st0 "fill:#02217B;">
+	<!ENTITY st1 "fill:#022386;">
+	<!ENTITY st2 "fill:#00F9FF;">
+	<!ENTITY st3 "display:none;fill:#00F9FF;">
+	<!ENTITY st4 "fill:#A7C2F9;">
+	<!ENTITY st5 "font-family:'MicrosoftYaHeiLight';">
+	<!ENTITY st6 "font-size:9.8611px;">
+	<!ENTITY st7 "font-size:8.5625px;">
+	<!ENTITY st8 "font-size:6px;">
+	<!ENTITY st9 "font-size:4.0625px;">
+	<!ENTITY st10 "font-size:4.8125px;">
+	<!ENTITY st11 "font-size:3.3125px;">
+	<!ENTITY st12 "font-size:1.5357px;">
+	<!ENTITY st13 "font-size:2.2083px;">
+	<!ENTITY st14 "font-size:2.8126px;">
+	<!ENTITY st15 "font-size:3.287px;">
+	<!ENTITY st16 "font-size:4.0501px;">
+	<!ENTITY st17 "font-size:4.875px;">
+	<!ENTITY st18 "font-size:4.4167px;">
+	<!ENTITY st19 "font-size:2.0624px;">
+	<!ENTITY st20 "font-size:2.4643px;">
+	<!ENTITY st21 "font-size:3.05px;">
+	<!ENTITY st22 "font-size:3.0833px;">
+	<!ENTITY st23 "font-size:7.4169px;">
+	<!ENTITY st24 "font-size:2.8502px;">
+	<!ENTITY st25 "fill:#FFFFFF;">
+	<!ENTITY st26 "font-size:3.8319px;">
+]>
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<g id="区域">
+	<path style="&st0;" d="M584.8,1008.8l75.3-4.7c0.5,0,0.9,0.3,1,0.8l6.7,67.3c0.1,0.5-0.3,1-0.9,1l-75.3,3.8c-0.5,0-0.9-0.3-0.9-0.8
+		l-6.7-66.4C583.9,1009.2,584.3,1008.8,584.8,1008.8z"/>
+	<path style="&st0;" d="M667.2,1003.9l73.8-5.5c0.5,0,0.9,0.3,0.9,0.8l6.5,66.5c0,0.5-0.3,0.9-0.8,0.9l-74.4,5.4
+		c-0.5,0-0.9-0.3-0.9-0.8l-5.9-66.5C666.4,1004.3,666.7,1003.9,667.2,1003.9z"/>
+	<path style="&st0;" d="M748,998l165.6-38.1l15.4,67.5l-175.3,39.3l-6.9-67.1C746.8,998.9,747.3,998.1,748,998z"/>
+	<polygon style="&st0;" points="920.2,960.8 921.2,959 995.4,941.1 996.9,942.7 1012.5,1007.3 1011.5,1009 936.7,1025.8 
+		935.1,1025.8 	"/>
+	<polygon style="&st0;" points="1001.9,941.1 1003.1,939.8 1079.1,922.3 1080.7,923.4 1079.4,991.4 1078.5,992.7 1019.4,1006.8 
+		1017.4,1006 	"/>
+	<path style="&st0;" d="M584.8,1004l74.6-4.9l1.3-1.6l-6.3-67.6l-36.3-27.1h-1.3C616.8,902.8,570.4,937.6,584.8,1004z"/>
+	<path style="&st0;" d="M659.5,932.4l6,64.9l0.9,1.1l75.4-4.4l-6.3-68.3l-1.1-0.9l-72.1,4.6C662.2,929.4,659.2,929.1,659.5,932.4z"
+		/>
+	<polygon style="&st0;" points="745.8,991.7 747.5,992.6 910.5,956.1 912.2,954.6 897.8,889.3 896.1,888.3 741.8,923.4 740.5,925.7 
+			"/>
+	<polygon style="&st0;" points="903.5,888.3 918.2,953.3 919.5,954 994.9,936.1 996.1,935.3 980.5,869.8 978.9,869 904.5,886.7 	"/>
+	<polygon style="&st0;" points="985.2,869 1001.2,934.3 1081.4,915.8 1103.2,841.3 1102.1,840.4 985.9,867.4 	"/>
+	<path style="&st0;" d="M969.4,797.7l14.3,63.7l1.6,1.7l121.3-28.6l21.4-73.4c0,0,0.6-2-2.3-1.4c-2.9,0.6-154.6,35.4-154.6,35.4
+		L969.4,797.7z"/>
+	<polygon style="&st0;" points="886.5,816.3 901.7,880 903.5,881.3 977.9,864.4 979.2,863.1 964.4,798.1 962.7,797.1 887.9,814.6 	
+		"/>
+	<polygon style="&st0;" points="740.5,917.6 741.8,918.6 893.9,883.4 895.7,882.3 880.2,817.1 878.7,816 735.1,849.8 734.4,852.1 	
+		"/>
+	<polygon style="&st0;" points="657.1,924.8 733.6,919.7 734.4,918.6 728.8,850.7 727.8,849.4 671.9,829.1 670.9,829.1 621.4,896.7 
+		623.2,899.3 	"/>
+	<path style="&st1;" d="M675.3,824.8l55.2,20.7l145-34l2-2l-15-65l-166,38c0,0-1,1-4,8c-2.9,6.7-13.2,27.3-17.5,33.4
+		C674.8,824.2,674.9,824.6,675.3,824.8z"/>
+	<polygon style="&st1;" points="869,744 884,809 887,810 961,793 963,791 947,726 945,725 870,742 	"/>
+	<polygon style="&st1;" points="966,789 969,790 1022,777 1006,711 952,723 952,725 	"/>
+	<polygon style="&st1;" points="1007,711 1024,776 1126,754 1129,752 1118,687 1116,686 1007,710 	"/>
+	<polygon style="&st1;" points="1114,680 1117,678 1102,613 1101,612 1052,624 1068,691 	"/>
+	<polygon style="&st1;" points="1012,704 1067,691 1051,624 997,637 	"/>
+	<polygon style="&st1;" points="1011,705 995,637 938,650 936,653 950,717 952,718 	"/>
+	<polygon style="&st1;" points="943,720 945,718 929,652 854,670 853,673 868,736 871,737 	"/>
+	<polygon style="&st1;" points="861,738 846,672 713,703 719,772 	"/>
+	<path style="&st1;" d="M697,777l21-5l-6-69l-11,2C701,705,704,764,697,777z"/>
+	<path style="&st1;" d="M708.8,699.2L700,700l-4.9-66.2c-0.1-1.1,0.6-2,1.6-2.4l7.3-2.4l6.8,67.8C710.9,698,710,699.1,708.8,699.2z"
+		/>
+	<polygon style="&st1;" points="712,698 760,686 744,620 706,628 	"/>
+	<polygon style="&st1;" points="753,653 794,643 802,677 761,686 	"/>
+	<polygon style="&st1;" points="804,677 844,667 836,634 796,643 	"/>
+	<polygon style="&st1;" points="795,642 836,633 829,600 787,610 	"/>
+	<polygon style="&st1;" points="794,642 786,610 745,620 753,652 	"/>
+	<polygon style="&st1;" points="851,664 929,647 921,616 844,634 	"/>
+	<polygon style="&st1;" points="844,633 921,614 913,580 836,598 	"/>
+	<path style="&st1;" d="M918,581l15,65l100-23l-15-67h-2l3,14l-14,3l-3-13l-83,18C919,578,918,579,918,581z"/>
+	<polygon style="&st1;" points="1006,572 1018,569 1015,556 1003,560 	"/>
+	<path style="&st1;" d="M1019,556l16,66l65-14l1-2c0,0-11-59-16-64c0,0,0-2-7,0S1019,556,1019,556z"/>
+	<path style="&st1;" d="M1019,550l62-15c0,0-5-10-16-21s-30-33-34-34l-27,7L1019,550z"/>
+	<polygon style="&st1;" points="1018,550 963,563 949,499 1003,487 	"/>
+	<polygon style="&st1;" points="962,564 947,499 902,510 917,574 	"/>
+	<polygon style="&st1;" points="912,575 908,558 885,563 889,580 	"/>
+	<polygon style="&st1;" points="870,584 888,580 882,556 865,560 	"/>
+	<polygon style="&st1;" points="869,584 864,560 828,568 834,593 	"/>
+	<polygon style="&st1;" points="828,567 882,555 878,537 873,538 867,518 820,528 	"/>
+	<polygon style="&st1;" points="868,517 896,511 901,531 874,537 	"/>
+	<polygon style="&st1;" points="902,532 908,557 885,562 879,537 	"/>
+	<path style="&st1;" d="M827.7,592.9l-7.5-32.7c-0.1-0.6-0.8-1-1.4-0.9l-57.7,13.5c-0.6,0.1-1,0.8-0.9,1.4l7.5,32.7
+		c0.1,0.6,0.8,1,1.4,0.9l57.7-13.5C827.5,594.1,827.9,593.5,827.7,592.9z"/>
+	<path style="&st1;" d="M760.9,570.8l58.1-12.6c0.5-0.1,0.9-0.7,0.8-1.2l-6.2-25.7c-0.3-1.3-1.6-2.1-2.9-1.8L754,542.8
+		c-0.5,0.1-0.9,0.7-0.7,1.2l6.5,26.1C759.9,570.6,760.4,570.9,760.9,570.8z"/>
+	<polygon style="&st1;" points="705,623 767,608 754,555 727,562 729,571 701,579 	"/>
+	<polygon style="&st1;" points="727,570 723,551 698,556 701,577 	"/>
+	<polygon style="&st1;" points="724,550 734,548 736,558 726,561 	"/>
+	<polygon style="&st1;" points="735,548 752,544 754,554 737,558 	"/>
+	<polygon style="&st1;" points="695,626 704,623 697,557 691,558 	"/>
+	<polygon style="&st1;" points="695,551 709,547 701,511 687,514 	"/>
+	<polygon style="&st1;" points="702,511 728,506 737,540 710,547 	"/>
+	<polygon style="&st1;" points="729,506 771,500 778,531 738,540 	"/>
+	<polygon style="&st1;" points="772,500 785,498 792,528 779,531 	"/>
+	<path style="&st1;" d="M786,498l21-3l4,26c0,0,0,2-3,3s-15,4-15,4L786,498z"/>
+	<polygon style="&st1;" points="813,485 818,522 856,513 848,477 	"/>
+	<polygon style="&st1;" points="849,476 857,513 895,505 887,467 	"/>
+	<path style="&st1;" d="M807,449l5,35l35-8l-8-35c0,0-30,6-31,7S807,449,807,449z"/>
+	<polygon style="&st1;" points="841,441 849,475 887,466 879,433 877,432 841,440 	"/>
+	<polygon style="&st1;" points="807,494 801,449 800,448 728,458 734,504 	"/>
+	<polygon style="&st1;" points="733,504 714,507 707,459 727,458 	"/>
+	<polygon style="&st1;" points="713,507 687,513 683,459 706,459 	"/>
+	<polygon style="&st1;" points="900,503 936,495 919,422 883,430 	"/>
+	<polygon style="&st1;" points="937,495 974,487 957,413 920,422 	"/>
+	<polygon style="&st1;" points="1007,479 974,486.3 958,413 969,411 	"/>
+	<path style="&st1;" d="M1008,479l20-4l-48-65c0,0-1-1-3-1s-7,1-7,1L1008,479z"/>
+	<path style="&st1;" d="M946,410l28-6l1-1l-32-44c0,0-1-1-3-1s-6,1-6,1L946,410z"/>
+	<polygon style="&st1;" points="914,418 946,411 933,359 903,367 	"/>
+	<polygon style="&st1;" points="880,417 911,410 913,418 883,425 	"/>
+	<polygon style="&st1;" points="880,416 911,409 907,393 877,400 	"/>
+	<polygon style="&st1;" points="876,399 908,392 902,367 870,374 	"/>
+	<polygon style="&st1;" points="865,416 874,414 877,426 868,429 	"/>
+	<polygon style="&st1;" points="866,429 806,443 800,418 854,405 852,395 869,391 874,413 864,415 	"/>
+	<polygon style="&st1;" points="848,379 865,375 869,390 852,394 	"/>
+	<polygon style="&st1;" points="800,417 853,405 847,379 794,391 	"/>
+	<path style="&st1;" d="M751,419"/>
+	<polygon style="&st1;" points="747,403 788,393 792,409 751,419 	"/>
+	<polygon style="&st1;" points="751,420 758,449 800,443 792,410 	"/>
+	<polygon style="&st1;" points="720,427 722,453 753,449 746,420 	"/>
+	<polygon style="&st1;" points="706,437 707,454 721,453 720,436 	"/>
+	<polygon style="&st1;" points="679,439 680,444 685,444 685,440 692,440 694,439 	"/>
+	<rect x="695" y="438" style="&st1;" width="8" height="2"/>
+	<polygon style="&st1;" points="680,445 682,454 685,454 685,445 	"/>
+	<polygon style="&st1;" points="686,445 695,444 695,441 705,441 706,454 686,454 	"/>
+	
+		<rect x="677.4" y="426" transform="matrix(0.9923 -0.124 0.124 0.9923 -48.0414 88.3463)" style="&st1;" width="16.1" height="8.1"/>
+	<polygon style="&st1;" points="695,433 746,420 745,414 732,417 730,407 717,409 720,422 694,425 	"/>
+	<polygon style="&st1;" points="731,407 733,416 745,413 743,404 	"/>
+	<polygon style="&st1;" points="687,415 689,425 719,421 716,409 	"/>
+	<polygon style="&st1;" points="673,408 683,406 688,425 677,426 	"/>
+	<polygon style="&st1;" points="670,396 673,407 686,404 683,392 	"/>
+	<path style="&st1;" d="M670.8,394.8L683,391l-9-34l-13,3l8.8,34.2C669.9,394.6,670.4,394.9,670.8,394.8z"/>
+	<polygon style="&st1;" points="675,357 699,351 712,405 689,411 	"/>
+	<polygon style="&st1;" points="700,352 728,345 733,363 704,369 	"/>
+	<polygon style="&st1;" points="705,371 709,387 737,380 733,365 	"/>
+	<polygon style="&st1;" points="709,389 713,405 739,399 741,397 737,382 	"/>
+	<polygon style="&st1;" points="740,371 760,366 766,392 746,398 	"/>
+	<polygon style="&st1;" points="762,366 768,392 786,388 787,386 781,361 	"/>
+	<polygon style="&st1;" points="740,370 781,360 774,334 733,344 	"/>
+	<path style="&st1;" d="M798,385l63-15l2-2l-11-50l-2-2l-68,16c0,0-1,1-1,2s12,51,12,51S794,386,798,385z"/>
+	<path style="&st1;" d="M867,356l2,11c0,0,1,2,4,1s27-7,27-7l-3-12L867,356z"/>
+	<polygon style="&st1;" points="898,347 921,341 925,356 901,361 	"/>
+	<polygon style="&st1;" points="922,341 926,355 936,353 	"/>
+	<polygon style="&st1;" points="866,355 897,348 896,346 921,340 884,309 857,315 	"/>
+	<path style="&st1;" d="M835,315l0.5-0.1L877,304c0,0-23-18-28-23s-10-13-12-17s-4-6-9-4s-34,9-34,9L835,315z"/>
+	<polygon style="&st1;" points="774,302 780,328 833,315 814,293 	"/>
+	<polygon style="&st1;" points="767,276 773,301 790,297 784,271 768,275 	"/>
+	<polygon style="&st1;" points="785,271 791,297 813,292 793,269 	"/>
+	<polygon style="&st1;" points="727,313 767,304 773,329 733,338 	"/>
+	<polygon style="&st1;" points="727,311 767,302 760,277 721,286 	"/>
+	<polygon style="&st1;" points="680,351 661,355 656,303 657,302 675,297 	"/>
+	<polygon style="&st1;" points="681,350 728,340 715,288 676,297 	"/>
+	<polygon style="&st1;" points="674,292 668,218 650,221 648,223 654,296 656,296 	"/>
+	<polygon style="&st1;" points="675,292 713,283 714,281 702,214 699,213 669,218 	"/>
+	<polygon style="&st1;" points="721,281 759,272 760,270 747,203 707,211 706,213 719,280 	"/>
+	<path style="&st1;" d="M754.2,204.1l11.5,65.1c0.2,0.9,1.1,1.5,2,1.3l61.7-16.1c0.8-0.2,1.2-1.1,0.8-1.9l-34.4-57.3
+		c-0.4-0.7-1.3-1.1-2.1-0.9L755,202l-0.2,0.2C754.3,202.7,754.1,203.4,754.2,204.1z"/>
+	<path style="&st1;" d="M755,196.7l38-6.7c0,0-18-30-19-35c-0.8-4.2-3.8-23.2-4.7-29.2c-0.2-1-1.1-1.7-2.1-1.5l-25,4.3
+		c-1.2,0.2-2,1.3-1.7,2.5l12.2,63.9C752.8,196.1,753.9,196.8,755,196.7z"/>
+	<path style="&st1;" d="M707,205.7l36.8-6.4c0.8-0.1,1.4-0.6,1.7-1.3l0.2-0.3c0.2-0.4,0.3-0.8,0.2-1.2l-11.6-64.8
+		c-0.2-0.9-1-1.4-1.8-1.3l-37.9,7.4c-0.9,0.2-1.4,1-1.3,1.9l11.4,64.5C704.8,205.1,705.9,205.8,707,205.7z"/>
+	<path style="&st1;" d="M667.9,210.9c0.1,0.6,0.6,1,1.2,0.9L700,207v-1l-11.7-65.5c-0.1-0.8-0.9-1.3-1.7-1.2l-23.1,4.5
+		c-0.8,0.2-1.3,0.9-1.3,1.7L667.9,210.9z"/>
+	<path style="&st1;" d="M648.2,215.2l0.6,0.6c0.2,0.2,0.4,0.2,0.6,0.2l17-2.8c0.4-0.1,0.6-0.4,0.6-0.7l-5.9-67.6
+		c0-0.4-0.4-0.7-0.8-0.6l-16.1,3.4c-1.2,0.3-2,1.4-1.9,2.6l5.8,64.6C648,214.9,648.1,215.1,648.2,215.2z"/>
+	<path style="&st1;" d="M641,143l92-17c0,0-8-54-15-69s-8-17-11-16s-50,24-56,34S634,103,641,143z"/>
+	<polygon style="&st1;" points="746,122 741,94 733,96 738,124 	"/>
+	<polygon style="&st1;" points="747,122 767,119 768,118 757,52 727,65 733,95 742,93 	"/>
+	<path style="&st1;" d="M726,64l30-14l-13-21c0,0-7-5-13-2s-17,10-17,10L726,64z"/>
+	<polygon style="&st1;" points="713,30 732,20 723,6 705,16 	"/>
+</g>
+<g id="文字">
+	<text transform="matrix(1 0 0 1 965.75 747.4189)" style="&st4; &st5; &st6;">预留地</text>
+	<text transform="matrix(1 0 0 1 1048.75 584.3066)" style="&st4; &st5; &st7;">林  地</text>
+	<text transform="matrix(1 0 0 1 900.75 761.4189)" style="&st4; &st5; &st6;">预留地</text>
+	<text transform="matrix(1 0 0 1 775.75 795.4189)" style="&st4; &st5; &st6;">预留地</text>
+	<text transform="matrix(1 0 0 1 766.75 722.4189)" style="&st4; &st5; &st6;">预留地</text>
+	<text transform="matrix(1 0 0 1 886.75 693.4189)" style="&st4; &st5; &st6;">预留地</text>
+	<text transform="matrix(1 0 0 1 867.75 637.4189)" style="&st4; &st5; &st6;">预留地</text>
+	<text transform="matrix(1 0 0 1 1070.75 652.3066)" style="&st4; &st5; &st7;">林  地</text>
+	<text transform="matrix(1 0 0 1 1053.75 731.3066)" style="&st4; &st5; &st7;">林  地</text>
+	<text transform="matrix(1 0 0 1 858.75 603.4189)" style="&st4; &st5; &st6;">预留地</text>
+	<text transform="matrix(1 0 0 1 951.75 667.4189)" style="&st4; &st5; &st6;">龙田二期</text>
+	<text transform="matrix(1 0 0 1 951.75 597.4189)" style="&st4; &st5; &st6;">颖泰嘉和</text>
+	<text transform="matrix(1 0 0 1 806.75 652.4189)" style="&st4; &st5; &st8;">宏胜科技</text>
+	<text transform="matrix(1 0 0 1 801.75 617.7607)" style="&st4; &st5; &st9;">正源化工</text>
+	<text transform="matrix(1 0 0 1 764.75 660.7607)" style="&st4; &st5; &st9;">阜新通泰</text>
+	<text transform="matrix(1 0 0 1 757.75 629.7607)" style="&st4; &st5; &st9;">亚凯化工</text>
+	<text transform="matrix(1 0 0 1 715.7495 660.4766)" style="&st4; &st5; &st10;">龙瑞二期</text>
+	<text transform="matrix(1 0 0 1 770.75 586.7607)" style="&st4; &st5; &st9;">阜新都创新材料科技有限公司</text>
+	<text transform="matrix(1 0 0 1 727.75 590.7607)" style="&st4; &st5; &st9;">金特莱二期</text>
+	<text transform="matrix(1 0 0 1 690.75 669.7607)" style="&st4; &st5; &st9;">安全隔离带</text>
+	<text transform="matrix(1 0 0 1 777.75 547.7607)" style="&st4; &st5; &st9;">宇泽二期</text>
+	<text transform="matrix(1 0 0 1 703.75 559.1191)" style="&st4; &st5; &st11;">瑞宁化工</text>
+	<text transform="matrix(1 0 0 1 690.75 583.7607)" style="&st4; &st5; &st9;">安全隔离带</text>
+	<text transform="matrix(1 0 0 1 725.75 553.5977)" style="&st4; &st5; &st12;">瑞宁预留地</text>
+	<text transform="matrix(1 0 0 1 737.75 552.4209)" style="&st4; &st5; &st13;">中间站（三）</text>
+	<text transform="matrix(1 0 0 1 839.75 539.9375)" style="&st4; &st5; &st14;">赢凯化工</text>
+	<text transform="matrix(1 0 0 1 839.75 575.9375)" style="&st4; &st5; &st14;">辽宁沈源</text>
+	<text transform="matrix(1 0 0 1 876.75 521.9375)" style="&st4; &st5; &st14;">污水处理厂</text>
+	<text transform="matrix(0.8557 0 0 1 889.75 543.8135)" style="&st4; &st5; &st15;">预留地</text>
+	<text transform="matrix(1 0 0 1 890.75 569.9375)" style="&st4; &st5; &st14;">嘉诚化工</text>
+	<text transform="matrix(1 0 0 1 923.75 536.9375)" style="&st4; &st5; &st14;">众辉化工</text>
+	<text transform="matrix(1 0 0 1 976.75 521.9375)" style="&st4; &st5; &st14;">众辉化工二期</text>
+	<text transform="matrix(1 0 0 1 1018.75 514.6138)" style="&st4; &st5; &st16;">安全隔离带</text>
+	<text transform="matrix(1 0 0 1 1006.75 562.9375)" style="&st4; &st5; &st14;">变电站</text>
+	<text transform="matrix(1 0 0 1 691.75 531.1191)" style="&st4; &st5; &st11;">和发化工</text>
+	<text transform="matrix(1 0 0 1 711.75 525.1191)" style="&st4; &st5; &st11;">睿光化工</text>
+	<text transform="matrix(1 0 0 1 748.75 521.1191)" style="&st4; &st5; &st11;">天予化工</text>
+	<text transform="matrix(1 0 0 1 778.75 513.1191)" style="&st4; &st5; &st11;">宇泽</text>
+	<text transform="matrix(1 0 0 1 793.75 508.1191)" style="&st4; &st5; &st11;">金特莱</text>
+	<text transform="matrix(1 0 0 1 750.75 473.4575)" style="&st4; &st5; &st17;">金凯化工占地</text>
+	<text transform="matrix(1 0 0 1 711.75 475.1191)" style="&st4; &st5; &st11;">东大光明</text>
+	<text transform="matrix(1 0 0 1 689.75 479.1191)" style="&st4; &st5; &st11;">孵化中心</text>
+	<text transform="matrix(1 0 0 1 819.75 459.1191)" style="&st4; &st5; &st11;">九华化工</text>
+	<text transform="matrix(1 0 0 1 856.75 452.1191)" style="&st4; &st5; &st11;">汉道化工</text>
+	<text transform="matrix(1 0 0 1 867.75 488.1191)" style="&st4; &st5; &st11;">乾屹化工</text>
+	<text transform="matrix(1 0 0 1 826.75 496.1191)" style="&st4; &st5; &st11;">东欣化工</text>
+	<text transform="matrix(1 0 0 1 901.75 458.1191)" style="&st4; &st5; &st11;">乾屹二期</text>
+	<text transform="matrix(1 0 0 1 937.75 452.0645)" style="&st4; &st5; &st18;">预留地</text>
+	<text transform="matrix(1 0 0 1 973.75 460.0645)" style="&st4; &st5; &st18;">预留地</text>
+	<text transform="matrix(1 0 0 1 883.75 402.1191)" style="&st4; &st5; &st11;">热源厂</text>
+	<text transform="matrix(1 0 0 1 914.75 387.1191)" style="&st4; &st5; &st11;">天立二期</text>
+	<text transform="matrix(1 0 0 1 879.75 415.1191)" style="&st4; &st5; &st11;">中科预留地</text>
+	<text transform="matrix(1 0 0 1 824.75 420.1191)" style="&st4; &st5; &st11;">龙田化工</text>
+	<text transform="matrix(1 0 0 1 814.75 394.1191)" style="&st4; &st5; &st11;">奥瑞凯化工</text>
+	<text transform="matrix(1 0 0 1 756.75 408.1191)" style="&st4; &st5; &st11;">清稷升化工</text>
+	<text transform="matrix(1 0 0 1 770.75 438.1191)" style="&st4; &st5; &st11;">升联化工</text>
+	<text transform="matrix(1 0 0 1 727.75 433.1191)" style="&st4; &st5; &st11;">金凯二期</text>
+	<text transform="matrix(1 0 0 1 709.75 447.1191)" style="&st4; &st5; &st11;">金凯</text>
+	<text transform="matrix(1 0 0 1 695.75 440.7676)" style="&st4; &st5; &st19;">专家公寓</text>
+	<text transform="matrix(1 0 0 1 687.75 448.3926)"><tspan x="0" y="0" style="&st4; &st5; &st20;">氟产业园开发区</tspan><tspan x="0" y="3" style="&st4; &st5; &st20;">管委会办公区</tspan></text>
+	<text transform="matrix(1 0 0 1 679.75 450.3926)" style="&st4; &st5; &st20;">消防队</text>
+	<text transform="matrix(1 0 0 1 680.75 443.3926)" style="&st4; &st5; &st20;">训练馆</text>
+	<text transform="matrix(1 0 0 1 687.75 440.3926)" style="&st4; &st5; &st20;">泵房</text>
+	<text transform="matrix(1 0 0 1 696.75 416.3926)" style="&st4; &st5; &st20;">峰成化工</text>
+	<text transform="matrix(1 0 0 1 680.75 428.3926)" style="&st4; &st5; &st20;">宏泰</text>
+	<text transform="matrix(1 0 0 1 675.75 420.3926)" style="&st4; &st5; &st20;">林大化工</text>
+	<text transform="matrix(1 0 0 1 716.75 413.3926)" style="&st4; &st5; &st20;">峰成化工二期</text>
+	<text transform="matrix(1 0 0 1 735.75 407.3926)"><tspan x="0" y="0" style="&st4; &st5; &st20;">中间站</tspan><tspan x="0" y="3" style="&st4; &st5; &st20;">（一）</tspan></text>
+	<text transform="matrix(1 0 0 1 673.75 399.3926)" style="&st4; &st5; &st20;">朗世化工</text>
+	<text transform="matrix(1 0 0 1 669.75 375.3926)" style="&st4; &st5; &st20;">龙瑞</text>
+	<text transform="matrix(1 0 0 1 685.7505 376.8945)" style="&st4; &st5; &st21;">达得利化工</text>
+	<text transform="matrix(1 0 0 1 707.7495 355.9229)" style="&st4; &st5; &st22;">鑫凯达</text>
+	<text transform="matrix(1 0 0 1 707.7495 375.9229)" style="&st4; &st5; &st22;">四达同和</text>
+	<text transform="matrix(1 0 0 1 712.7495 392.9229)" style="&st4; &st5; &st22;">泓翔化工</text>
+	<text transform="matrix(1 0 0 1 746.7495 381.9229)" style="&st4; &st5; &st22;">弘吉</text>
+	<text transform="matrix(1 0 0 1 766.7495 375.9229)" style="&st4; &st5; &st22;">金丰</text>
+	<text transform="matrix(1 0 0 1 748.7495 351.9229)" style="&st4; &st5; &st22;">氟托新能源</text>
+	<text transform="matrix(1 0 0 1 799.7495 366.9229)" style="&st4; &st5; &st22;">凯森盟化工</text>
+	<text transform="matrix(1 0 0 1 803.7495 336.9229)" style="&st4; &st5; &st22;">氟托新能源二期</text>
+	<text transform="matrix(1 0 0 1 841.7495 354.9229)" style="&st4; &st5; &st22;">康森化工</text>
+	<text transform="matrix(1 0 0 1 870.7495 357.9229)" style="&st4; &st5; &st22;">天立化工</text>
+	<text transform="matrix(1 0 0 1 906.7495 348.9229)" style="&st4; &st5; &st22;">预留地</text>
+	<text transform="matrix(1 0 0 1 792.7495 307.9229)" style="&st4; &st5; &st22;">氟托三期</text>
+	<text transform="matrix(1 0 0 1 771.7495 284.9229)" style="&st4; &st5; &st22;">香源化工</text>
+	<text transform="matrix(1 0 0 1 792.7495 282.9229)" style="&st4; &st5; &st22;">预留地</text>
+	<text transform="matrix(1 0 0 1 740.7495 318.9229)" style="&st4; &st5; &st22;">凯莱英一期</text>
+	<text transform="matrix(1 0 0 1 734.7495 292.9229)" style="&st4; &st5; &st22;">阜新孚隆宝</text>
+	<text transform="matrix(1 0 0 1 693.7495 314.9229)" style="&st4; &st5; &st22;">施壮化工</text>
+	<text transform="matrix(1 0 0 1 676.749 249.6328)" style="&st4; &st5; &st23;">预留地</text>
+	<text transform="matrix(1 0 0 1 720.749 244.6328)" style="&st4; &st5; &st23;">预留地</text>
+	<text transform="matrix(1 0 0 1 774.749 233.6328)" style="&st4; &st5; &st23;">预留地</text>
+	<text transform="matrix(1 0 0 1 722.7495 213.9229)" style="&st4; &st5; &st22;">九杰燃气一期</text>
+	<text transform="matrix(1 0 0 1 675.749 75.6328)" style="&st4; &st5; &st23;">中石化</text>
+	<text transform="matrix(1 0 0 1 725.7495 44.7246)" style="&st4; &st5; &st24;">工业净水厂</text>
+	<text transform="matrix(1 0 0 1 712.0488 17.7246)"><tspan x="0" y="0" style="&st4; &st5; &st24;">给水加压</tspan><tspan x="2.9" y="3.4" style="&st4; &st5; &st24;">泵站</tspan></text>
+	<text transform="matrix(1 0 0 1 735.0488 110.7246)" style="&st4; &st5; &st24;">恒大物流</text>
+	<text transform="matrix(0.9998 -1.897000e-02 1.897000e-02 0.9998 614.8227 1078.8999)" style="&st25; &st5; &st26;">化   工  14   路</text>
+	<text transform="matrix(0.9998 -1.897000e-02 1.897000e-02 0.9998 714.8227 1071.8999)" style="&st25; &st5; &st26;">化   工  14   路</text>
+	<text transform="matrix(0.9667 -0.256 0.256 0.9667 839.4794 1052.7329)" style="&st25; &st5; &st26;">化   工  14   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 960.45 1024.5394)" style="&st25; &st5; &st26;">化   工  14   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 1035.45 1006.5395)" style="&st25; &st5; &st26;">化   工  14   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 947.45 951.5395)" style="&st25; &st5; &st26;">化   工  13   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 778.45 990.5395)" style="&st25; &st5; &st26;">化   工  13   路</text>
+	<text transform="matrix(0.9995 -3.242000e-02 3.242000e-02 0.9995 606.8098 1006.0315)" style="&st25; &st5; &st26;">化   工  13   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 767.45 916.5395)" style="&st25; &st5; &st26;">化   工  12   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 859.45 895.5395)" style="&st25; &st5; &st26;">化   工  12   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 936.45 877.5395)" style="&st25; &st5; &st26;">化   工  12   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 1033.45 855.5395)" style="&st25; &st5; &st26;">化   工  12   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 1026.45 780.5395)" style="&st25; &st5; &st26;">化   工  11   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 916.45 806.5395)" style="&st25; &st5; &st26;">化   工  11   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 841.45 823.5395)" style="&st25; &st5; &st26;">化   工  11   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 753.45 844.5395)" style="&st25; &st5; &st26;">化   工  11   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 739.45 771.5395)" style="&st25; &st5; &st26;">化   工  10   路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 890.45 736.5395)" style="&st25; &st5; &st26;">化   工  10  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 1018.45 706.5395)" style="&st25; &st5; &st26;">化   工  10  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 1001.45 634.5395)" style="&st25; &st5; &st26;">化   工  9  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 880.45 662.5395)" style="&st25; &st5; &st26;">化   工  9  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 811.45 678.5395)" style="&st25; &st5; &st26;">化   工  9  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 755.45 691.5395)" style="&st25; &st5; &st26;">化   工  9  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 725.45 622.5395)" style="&st25; &st5; &st26;">化   工  8  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 789.45 607.5395)" style="&st25; &st5; &st26;">化   工  8  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 879.45 586.5395)" style="&st25; &st5; &st26;">化   工  8  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 977.45 563.5395)" style="&st25; &st5; &st26;">化   工  8  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 997.45 486.5395)" style="&st25; &st5; &st26;">化   工  7  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 906.45 506.5395)" style="&st25; &st5; &st26;">化   工  7  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 829.45 523.5395)" style="&st25; &st5; &st26;">化   工  7  路</text>
+	<text transform="matrix(0.9703 -0.2421 0.2421 0.9703 735.45 545.5395)" style="&st25; &st5; &st26;">化   工  7  路</text>
+	<text transform="matrix(0.9893 -0.1455 0.1455 0.9893 744.157 454.4742)" style="&st25; &st5; &st26;">化   工  6  路</text>
+	<text transform="matrix(0.9793 -0.2023 0.2023 0.9793 832.2858 440.1083)" style="&st25; &st5; &st26;">化   工  6  路</text>
+	<text transform="matrix(0.9722 -0.2342 0.2342 0.9722 915.437 421.4937)" style="&st25; &st5; &st26;">化   工  6  路</text>
+	<text transform="matrix(0.9734 -0.229 0.229 0.9734 897.4305 366.4509)" style="&st25; &st5; &st26;">化   工  5  路</text>
+	<text transform="matrix(0.9734 -0.229 0.229 0.9734 835.4305 380.4509)" style="&st25; &st5; &st26;">化   工  5  路</text>
+	<text transform="matrix(0.9734 -0.229 0.229 0.9734 698.4305 412.4509)" style="&st25; &st5; &st26;">化   工  5  路</text>
+	<text transform="matrix(0.9734 -0.229 0.229 0.9734 685.4305 353.4509)" style="&st25; &st5; &st26;">化   工  4  路</text>
+	<text transform="matrix(0.9734 -0.229 0.229 0.9734 825.4305 320.4509)" style="&st25; &st5; &st26;">化   工  4  路</text>
+	<text transform="matrix(0.9734 -0.229 0.229 0.9734 789.4305 268.4509)" style="&st25; &st5; &st26;">化   工  3   路 </text>
+	<text transform="matrix(0.9734 -0.229 0.229 0.9734 673.4305 296.4509)" style="&st25; &st5; &st26;">化   工  3   路 </text>
+	<text transform="matrix(0.9829 -0.1844 0.1844 0.9829 664.2795 217.8763)" style="&st25; &st5; &st26;">化   工  2   路 </text>
+	<text transform="matrix(0.9829 -0.1844 0.1844 0.9829 724.2795 205.8763)" style="&st25; &st5; &st26;">化   工  2   路 </text>
+	<text transform="matrix(0.9829 -0.1844 0.1844 0.9829 767.2795 197.8763)" style="&st25; &st5; &st26;">化   工  2   路 </text>
+	<text transform="matrix(0.9829 -0.1844 0.1844 0.9829 744.2795 126.8763)" style="&st25; &st5; &st26;">化   工  1  路 </text>
+	<text transform="matrix(0.9829 -0.1844 0.1844 0.9829 671.2795 140.8763)" style="&st25; &st5; &st26;">化   工  1  路 </text>
+	<text transform="matrix(0.8511 -0.5251 0.5251 0.8511 673.0596 56.5173)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(0.8511 -0.5251 0.5251 0.8511 716.0596 33.5173)" style="&st25; &st5; &st26;">化   工  </text>
+	<text transform="matrix(0.9994 -3.510000e-02 3.510000e-02 0.9994 730.2892 24.9614)" style="&st25; &st5; &st26;">G</text>
+	<text transform="matrix(0.9994 -3.510000e-02 3.510000e-02 0.9994 737.2892 24.9614)" style="&st25; &st5; &st26;">街</text>
+	<text transform="matrix(0.5349 0.8449 -0.8449 0.5349 689.2282 5.1954)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.558 -0.8299 0.8299 0.558 658.1465 29.0652)" style="&st25; &st5; &st26;">阜   新   公   路</text>
+	<text transform="matrix(0.8554 -0.5179 0.5179 0.8554 677.3658 20.8295)" style="&st25; &st5; &st26;">铁  路</text>
+	<text transform="matrix(0.2152 0.9766 -0.9766 0.2152 663.7646 386.3431)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(8.959001e-02 0.996 -0.996 8.959001e-02 653.2087 316.0393)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(8.959001e-02 0.996 -0.996 8.959001e-02 640.2087 176.0393)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(0.2152 0.9766 -0.9766 0.2152 672.7646 428.3431)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(1.415000e-02 0.9999 -0.9999 1.415000e-02 688.0657 576.8792)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(1.415000e-02 0.9999 -0.9999 1.415000e-02 693.0657 648.8792)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(-0.1126 0.9936 -0.9936 -0.1126 697.5118 747.7607)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(-0.6144 0.789 -0.789 -0.6144 645.6065 855.6379)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(6.511000e-02 0.9979 -0.9979 6.511000e-02 581.4501 1030.9629)" style="&st25; &st5; &st26;">化   工  A  街 </text>
+	<text transform="matrix(6.511000e-02 0.9979 -0.9979 6.511000e-02 657.4501 957.9629)" style="&st25; &st5; &st26;">化   工  H  街 </text>
+	<text transform="matrix(6.511000e-02 0.9979 -0.9979 6.511000e-02 738.4501 951.9629)" style="&st25; &st5; &st26;">化   工  I  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 903.2828 910.285)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 922.2828 989.285)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 870.2828 764.285)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 836.2828 622.2849)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 818.2828 540.2849)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 794.2828 409.2849)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 777.2828 334.2849)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 761.2828 268.2849)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 748.2828 202.2849)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 737.2828 135.2849)" style="&st25; &st5; &st26;">化   工  D  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 692.2828 158.2849)" style="&st25; &st5; &st26;">化   工  B  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 720.2828 299.2849)" style="&st25; &st5; &st26;">化   工  B  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 738.2828 379.2849)" style="&st25; &st5; &st26;">化   工  B  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 907.2828 548.2849)" style="&st25; &st5; &st26;">化   工  E  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 919.2828 599.2849)" style="&st25; &st5; &st26;">化   工  E  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 935.2828 667.2849)" style="&st25; &st5; &st26;">化   工  E  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 968.2828 811.2849)" style="&st25; &st5; &st26;">化   工  E  街 </text>
+	<text transform="matrix(0.1776 0.9841 -0.9841 0.1776 1002.2828 959.2849)" style="&st25; &st5; &st26;">化   工  E  街 </text>
+	<text transform="matrix(0.2001 0.9798 -0.9798 0.2001 884.0839 447.3232)" style="&st25; &st5; &st26;">化   工  E  街 </text>
+	<text transform="matrix(0.2001 0.9798 -0.9798 0.2001 855.0839 324.3232)" style="&st25; &st5; &st26;">化   工  E  街 </text>
+	<text transform="matrix(0.5054 0.8629 -0.8629 0.5054 809.5869 214.0344)" style="&st25; &st5; &st26;">化   工  G  街 </text>
+	<text transform="matrix(0.7601 0.6498 -0.6498 0.7601 899.9308 319.8036)" style="&st25; &st5; &st26;">化   工  G  街 </text>
+	<text transform="matrix(0.5952 0.8036 -0.8036 0.5952 997.624 430.8811)" style="&st25; &st5; &st26;">化   工  G  街 </text>
+	<text transform="matrix(0.2094 0.9778 -0.9778 0.2094 1094.9321 568.3739)" style="&st25; &st5; &st26;">化   工  G  街 </text>
+	<text transform="matrix(0.1613 0.9869 -0.9869 0.1613 1124.4634 709.2118)" style="&st25; &st5; &st26;">化   工  G  街 </text>
+	<text transform="matrix(-0.3085 0.9512 -0.9512 -0.3085 1095.0305 872.015)" style="&st25; &st5; &st26;">化   工  G  街 </text>
+</g>
+</svg>
