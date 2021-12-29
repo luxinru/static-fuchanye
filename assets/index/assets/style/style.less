@@ -185,6 +185,7 @@
 }
 
 .new {
+  position: relative;
   width: 100%;
   flex: 1 0;
   background: url('../images/icon13.png') no-repeat;
@@ -194,12 +195,20 @@
 }
 
 .box_content {
+  position: relative;
   width: 100%;
   flex: 1 0;
   display: flex;
   flex-direction: column;
   padding: 12px 48px;
   overflow: hidden;
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-right: 96px;
+  }
 }
 
 .new_item {
@@ -208,13 +217,15 @@
   background: linear-gradient(to right, rgba(11, 107, 212, 0.3), rgba(11, 107, 212, 0));
   display: flex;
   align-items: center;
-  margin-top: 12px;
+  // margin-top: 12px;
+  overflow: hidden;
 }
 
 .new_item span {
   width: 3px;
   height: 100%;
   background: #268EFF;
+  overflow: hidden;
 }
 
 .new_item_info {
@@ -224,6 +235,7 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 24px;
+  overflow: hidden;
 }
 
 .new_item_info .label {
@@ -237,6 +249,9 @@
   font-weight: 400;
   color: #FFFFFF;
   margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content .center {
@@ -502,6 +517,7 @@
   box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.99);
   border-radius: 5px;
   padding: 8px;
+  z-index: 4;
 }
 
 .smallImg {
