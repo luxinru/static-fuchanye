@@ -217,7 +217,7 @@
   background: linear-gradient(to right, rgba(11, 107, 212, 0.3), rgba(11, 107, 212, 0));
   display: flex;
   align-items: center;
-  // margin-top: 12px;
+  margin-top: 12px;
   overflow: hidden;
 }
 
@@ -454,8 +454,6 @@
 
   .circle {
     position: absolute;
-    top: 50%;
-    left: 50%;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -663,6 +661,7 @@
 }
 
 .info_bar {
+  position: relative;
   width: 100%;
   flex: 1 0;
   margin-top: 10px;
@@ -670,7 +669,13 @@
   display: flex;
   flex-direction: column;
   padding: 0 10px;
-  overflow-y: scroll;
+  overflow: hidden;
+
+  .info_bar_box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .info_bar_item {

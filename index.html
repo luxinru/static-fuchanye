@@ -231,6 +231,8 @@
 
             <div id="info_bar"
                  class="info_bar">
+              <div id="info_bar_box"
+                   class="info_bar_box"></div>
             </div>
           </div>
         </div>
@@ -261,6 +263,8 @@
   let currentArticle = ''
   let currentTime = moment(new Date()).format('YYYY-MM-DD')
   let currentName = '全部厂区'
+  let positionArr = []
+  let floorId = ''
 
   // http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevel/article_id/5
 
@@ -284,21 +288,28 @@
     if (type === 1) {
       $("div").remove(".circle");
 
-      $.get(firstUrl, (res) => {
-        const { data: data1 } = JSON.parse(res)
-        const { meta_img, meta_content1, meta_content2, article_name } = data1[0]
+      $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevelChild/pid/' + floorId, (res) => {
+        const { data } = JSON.parse(res)
+        console.log('JSON.parse(res) :>> ', JSON.parse(res));
+        // bigimgImg.src = svg_img
 
         $('#tab_title').html('')
         $('#tab_content').html('')
-        for (let index = 0; index < meta_img.length; index++) {
-          const element = meta_img[index];
+        for (let index = 0; index < data.length; index++) {
+          const element = data[index];
           $('#tab_title').append(
-            index === 0 ? '<li class="layui-this">' + '图' + (index + 1) + '</li>' : '<li>' + '图' + (index + 1) + '</li>'
+            index === 0 ? '<li class="layui-this">' + element.name + '</li>' : '<li>' + element.name + '</li>'
           )
           $('#tab_content').append(
-            index === 0 ? '<div class="layui-tab-item layui-show"><img src="' + element.file_path + '" alt=""></div>' : '<div class="layui-tab-item"><img src="' + element.file_path + '" alt=""></div>'
+            index === 0 ? '<div class="layui-tab-item layui-show"><img src="' + element.image + '" alt=""></div>' : '<div class="layui-tab-item"><img src="' + element.image + '" alt=""></div>'
           )
         }
+      })
+
+      $.get(firstUrl, (res) => {
+        console.log('JSON.parse(res) :>> ', JSON.parse(res));
+        const { data: data1 } = JSON.parse(res)
+        const { meta_content1, meta_content2, article_name } = data1[0]
 
         let html1 = $.parseHTML(meta_content1)
         $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
@@ -349,14 +360,16 @@
           })
         }
 
-        $('#info_bar').html('')
+        $('#info_bar_box').html('')
 
         for (let index = 0; index < arr.length; index++) {
           const element = arr[index];
-          $('#info_bar').append(
+          $('#info_bar_box').append(
             '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
           )
         }
+
+        slide("#info_bar", ".info_bar_box");
       })
 
       layuiTab.style.display = 'flex';
@@ -367,7 +380,13 @@
         element.style.display = 'block'
       }
     } else {
-      addCircle(true)
+      $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevel/article_id/' + name, (res) => {
+        const { data: { svg_img }, position_list } = JSON.parse(res)
+        console.log('position_list :>> ', position_list);
+        bigimgImg.src = svg_img
+        positionArr = position_list
+        addCircle(true)
+      })
 
       $.get(firstUrl, (res) => {
         const { data: data1 } = JSON.parse(res)
@@ -430,14 +449,16 @@
           })
         }
 
-        $('#info_bar').html('')
+        $('#info_bar_box').html('')
 
         for (let index = 0; index < arr.length; index++) {
           const element = arr[index];
-          $('#info_bar').append(
+          $('#info_bar_box').append(
             '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
           )
         }
+
+        slide("#info_bar", ".info_bar_box");
       })
 
       for (let index = 0; index < imgArr.length; index++) {
@@ -461,12 +482,13 @@
       if (viewer) {
         viewer.destroy()
       }
-      $('#bigimg').append(
-        '<div class="circle"><div class="bac"></div><div class="chil1"></div><div class="chil2"></div></div>'
-      )
-      $(".circle").click(() => {
-        itemonClick(1, currentArticle, currentTime)
-      });
+      for (let index = 0; index < positionArr.length; index++) {
+        const element = positionArr[index];
+
+        $('#bigimg').append(
+          '<div class="circle" title="' + element.name + '" style="top: ' + element.map_top + 'px;left: ' + element.map_left + 'px;" onclick="floorId = ' + element.id + '; itemonClick(1, currentArticle, currentTime)"><div class="bac"></div><div class="chil1"></div><div class="chil2"></div></div>'
+        )
+      }
     } else {
       $("div").remove(".circle");
       viewer = new Viewer(document.getElementById('bigimg-img'), {
@@ -482,15 +504,7 @@
   function layerClose() {
     const layer = document.getElementById('layer')
     layer.style.zIndex = -1
-    layer.style.opacity = 0;
-    return;
-    if (layerType === 2) {
-      itemonClick(1)
-    } else {
-      const layer = document.getElementById('layer')
-      layer.style.zIndex = -1
-      layer.style.opacity = 0
-    }
+    layer.style.opacity = 0
   }
 
   //本地调试
@@ -755,7 +769,7 @@
         },
         grid: {
           top: '20%',
-          left: '15%',
+          left: '20%',
           // right: '20%',
           bottom: '20%'
         },
@@ -1281,7 +1295,7 @@
       }
 
       $("#last-news-ul").html(html);
-      slide("#last-news", "ul");
+      slide("#last-news", "#last-news-ul");
     });
     //最新消息 end
 
