@@ -292,7 +292,7 @@
       $("div").remove(".circle");
 
       // todo
-      $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevelChild/pid/' + 9, (res) => {
+      $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevelChild/pid/' + floorId, (res) => {
         let { data } = JSON.parse(res)
         console.log('JSON.parse(res)1 :>> ', JSON.parse(res));
         // bigimgImg.src = svg_img
