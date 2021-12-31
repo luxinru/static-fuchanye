@@ -500,8 +500,8 @@
     let firstUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
     let secondUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
 
-      firstUrl = firstUrl + '/time/' + moment(new Date()).format('YYYY-MM-DD')
-      secondUrl = secondUrl + '/time/' + moment(new Date()).format('YYYY-MM-DD')
+      firstUrl = firstUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
+      secondUrl = secondUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
 
     $.get(firstUrl, (res) => {
       const { data: data1 } = JSON.parse(res)
@@ -1294,7 +1294,11 @@
         elem: '#test2',
         done: (value, date, endDate) => {
           currentTime = value
-          // itemonClick(2, currentArticle, value)
+          if (layerType === 1) {
+            changeChild(2)
+          } else {
+            itemonClick(2, currentArticle, value)
+          }
         }
       });
     });
