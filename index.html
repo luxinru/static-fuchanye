@@ -267,6 +267,7 @@
   let floorId = ''
   let pathImg = ''
   let svgImg = ''
+  let currentChild = ''
 
   // http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevel/article_id/5
 
@@ -301,19 +302,15 @@
         for (let index = 0; index < data.length; index++) {
           const element = data[index];
           $('#tab_title').append(
-            index === 0 ? '<li class="layui-this">' + element.name + '</li>' : '<li>' + element.name + '</li>'
+            index === 0 ? "<li class='layui-this' onclick='currentChild=" + JSON.stringify(element) + ";changeChild()'>" + element.name + "</li>" : "<li onclick='currentChild=" + JSON.stringify(element) + ";changeChild()'>" + element.name + "</li>"
           )
           $('#tab_content').append(
             index === 0 ? '<div class="layui-tab-item layui-show"><img src="' + element.image.file_path + '" alt=""></div>' : '<div class="layui-tab-item"><img src="' + element.image.file_path + '" alt=""></div>'
           )
 
           if (index === 0) {
-            pathImg = element.image.file_path
-            svgImg = element.svg.file_path
-
-            positionArr = element.position
-
-            addCircle(true, 2)
+            currentChild = element
+            changeChild()
           }
         }
 
@@ -398,7 +395,7 @@
         const { data: { svg_img }, position_list } = JSON.parse(res)
         svgImg = svg_img
         positionArr = position_list
-        addCircle(true)
+        addCircle(true, 1)
       })
 
       $.get(firstUrl, (res) => {
@@ -487,10 +484,103 @@
     layer.style.opacity = 1
   }
 
+  function changeChild(type = 1) {
+    console.log('currentChild :>> ', currentChild);
+    let data = currentChild
+
+    if (type === 1) {
+      pathImg = data.image.file_path
+      svgImg = data.svg.file_path
+
+      positionArr = data.position
+      addCircle(true, 2)
+    }
+
+    let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test'
+    let firstUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
+    let secondUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
+
+      firstUrl = firstUrl + '/time/' + moment(new Date()).format('YYYY-MM-DD')
+      secondUrl = secondUrl + '/time/' + moment(new Date()).format('YYYY-MM-DD')
+
+    $.get(firstUrl, (res) => {
+      const { data: data1 } = JSON.parse(res)
+      console.log('data1 :>> ', data1);
+      const { article_device, article_meta, article_users, base_info, base_safe } = data1[0]
+
+      const articleDevice = document.getElementById('article_device')
+      const articleMeta = document.getElementById('article_meta')
+      const articleUsers = document.getElementById('article_users')
+      articleDevice.innerHTML = article_device
+      articleMeta.innerHTML = article_meta
+      articleUsers.innerHTML = article_users
+
+      let html1 = $.parseHTML(base_info)
+      $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img1.png">厂区简介</div>')
+      $("#smallImg_item1").append(html1)
+
+      let html2 = $.parseHTML(base_safe)
+      $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img2.png">应急消防救援</div>')
+      $("#smallImg_item2").append(html2)
+    })
+
+    $.get(secondUrl, (res) => {
+      console.log('res1 :>> ', JSON.parse(res));
+      const { data: data2 } = JSON.parse(res)
+      let arr = [];
+      for (let index = 0; index < data2.length; index++) {
+        const element = data2[index];
+        const time = Number(element.modify_at + '' + '000')
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '消防设备' + element.article_device + '台'
+        })
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '易燃材料' + element.article_meta + '台'
+        })
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '管理人员' + element.article_users + '台'
+        })
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '字段4' + element.article_field4 + '台'
+        })
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '字段5' + element.article_field5 + '台'
+        })
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '字段6' + element.article_field6 + '台'
+        })
+      }
+
+      $('#info_bar_box').html('')
+
+      for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+        $('#info_bar_box').append(
+          '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
+        )
+      }
+
+      slide("#info_bar", ".info_bar_box");
+    })
+  }
+
   addtype = true
   let viewer = ''
 
   function addCircle(type, level = 1) {
+    $("div").remove(".circle");
     addtype = !type
     const bigimgImg = document.getElementById('bigimg-img')
     if (type) {
@@ -507,12 +597,11 @@
           )
         } else {
           $('#bigimg').append(
-            '<div class="circle" title="' + element.name + '" style="top: ' + element.map_top + 'px;left: ' + element.map_left + 'px;" onmouseover="alert(\'鼠标经过\')"><div class="bac"></div><div class="chil1"></div><div class="chil2"></div></div>'
+            "<div class='circle' title='" + element.name + "' style='top: " + element.map_top + "px;left: " + element.map_left + "px;' onmouseenter='currentChild=" + JSON.stringify(element) + ";changeChild(2)'><div class='bac'></div><div class='chil1'></div><div class='chil2'></div></div>"
           )
         }
       }
     } else {
-      $("div").remove(".circle");
       bigimgImg.src = svgImg
       viewer = new Viewer(document.getElementById('bigimg-img'), {
         inline: true,
@@ -1205,7 +1294,7 @@
         elem: '#test2',
         done: (value, date, endDate) => {
           currentTime = value
-          itemonClick(2, currentArticle, value)
+          // itemonClick(2, currentArticle, value)
         }
       });
     });
