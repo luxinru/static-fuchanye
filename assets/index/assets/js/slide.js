@@ -1,9 +1,12 @@
 
+		
+		var timer = null
 		//上下无缝滚动
 		function slide(elp,elc){
 			var loops = $(elp).attr("attr-loop");
 			var  slideElm = $(elc);
 			var  slideHeight =null; 
+			var timer = null
 			
 	
 			
@@ -45,13 +48,15 @@
 				}
 				//鼠标移入暂停，移出继续
 				function msgSlide(fn){				
-				  var timer = 	setInterval(fn,20);
+				timer = 	setInterval(fn,20);
 					$(elp).hover(function(){
 						clearInterval(timer)
 					},function(){
 						timer = setInterval(fn,20);
 					})	
 				}
+
+				return timer;
 		}
 			
 	

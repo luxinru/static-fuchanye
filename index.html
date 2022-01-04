@@ -268,6 +268,7 @@
   let pathImg = ''
   let svgImg = ''
   let currentChild = ''
+  let childTimer = null
 
   // http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevel/article_id/5
 
@@ -380,7 +381,8 @@
           )
         }
 
-        slide("#info_bar", ".info_bar_box");
+        clearInterval(childTimer)
+        childTimer = slide("#info_bar", ".info_bar_box");
       })
 
       layuiTab.style.display = 'flex';
@@ -469,7 +471,8 @@
           )
         }
 
-        slide("#info_bar", ".info_bar_box");
+        clearInterval(childTimer)
+        childTimer = slide("#info_bar", ".info_bar_box");
       })
 
       for (let index = 0; index < imgArr.length; index++) {
@@ -571,8 +574,9 @@
           '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
         )
       }
+      clearInterval(childTimer)
 
-      slide("#info_bar", ".info_bar_box");
+      childTimer = slide("#info_bar", ".info_bar_box");
     })
   }
 
@@ -1313,7 +1317,7 @@
           symbol: 'pin',
           coord: [Number(item.map_left), Number(item.map_top)],
           itemStyle: {
-            color: 'red'
+            color: 'rgba(251, 255, 0, 1)'
           }
         }
       })
