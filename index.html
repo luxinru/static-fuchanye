@@ -69,9 +69,9 @@
       <div class="box new">
         <div class="box_title">最新消息</div>
         <div id="last-news"
-             class="box_content"
-             attr-loop="false">
-          <ul id="last-news-ul">
+             class="box_content">
+          <ul id="last-news-ul"
+              attr-loop="true">
           </ul>
         </div>
       </div>
@@ -174,7 +174,7 @@
               <img class="changeImg"
                    src="./assets/index/assets/images/change.png"
                    alt=""
-                   onclick="addCircle(addtype)">
+                   onclick="addCircle(addtype, level)">
             </div>
             <div class="smallImg">
               <div id="smallImg_item1"
@@ -232,7 +232,8 @@
             <div id="info_bar"
                  class="info_bar">
               <div id="info_bar_box"
-                   class="info_bar_box"></div>
+                   class="info_bar_box"
+                   attr-loop="true"></div>
             </div>
           </div>
         </div>
@@ -397,7 +398,8 @@
         const { data: { svg_img }, position_list } = JSON.parse(res)
         svgImg = svg_img
         positionArr = position_list
-        addCircle(true, 1)
+        level = 1
+        addCircle(true, level)
       })
 
       $.get(firstUrl, (res) => {
@@ -496,15 +498,16 @@
       svgImg = data.svg.file_path
 
       positionArr = data.position
-      addCircle(true, 2)
+      level = 2
+      addCircle(true, level)
     }
 
     let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test'
     let firstUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
     let secondUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
 
-      firstUrl = firstUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
-      secondUrl = secondUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
+    firstUrl = firstUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
+    secondUrl = secondUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
 
     $.get(firstUrl, (res) => {
       const { data: data1 } = JSON.parse(res)
@@ -574,14 +577,15 @@
           '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
         )
       }
-      clearInterval(childTimer)
 
+      clearInterval(childTimer)
       childTimer = slide("#info_bar", ".info_bar_box");
     })
   }
 
   addtype = true
   let viewer = ''
+  let level = 1
 
   function addCircle(type, level = 1) {
     $("div").remove(".circle");
