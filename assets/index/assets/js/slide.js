@@ -44,11 +44,6 @@ function slide(elp, elc) {
 	//鼠标移入暂停，移出继续
 	function msgSlide(fn) {
 		timer = setInterval(fn, 20);
-		$(elp).hover(function () {
-			clearInterval(timer)
-		}, function () {
-			timer = setInterval(fn, 20);
-		})
 	}
 
 
