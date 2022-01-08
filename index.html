@@ -225,7 +225,7 @@
                   <img src="assets/index/assets/images/icon12.png"
                        alt="">
                 </div>
-                <span class="label">管理人员</span>
+                <span class="label">人员</span>
                 <span class="value"
                       id="article_users">0</span>
               </div>
@@ -389,21 +389,7 @@
             time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
             content: '人员' + element.article_users + '台'
           })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '字段4' + element.article_field4 + '台'
-          })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '字段5' + element.article_field5 + '台'
-          })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '字段6' + element.article_field6 + '台'
-          })
+        
         }
 
         $('#info_bar_box').html('')
@@ -495,23 +481,9 @@
         arr.push({
           title: element.article_name,
           time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-          content: '管理人员' + element.article_users + '台'
+          content: '人员' + element.article_users + '台'
         })
-        arr.push({
-          title: element.article_name,
-          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-          content: '字段4' + element.article_field4 + '台'
-        })
-        arr.push({
-          title: element.article_name,
-          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-          content: '字段5' + element.article_field5 + '台'
-        })
-        arr.push({
-          title: element.article_name,
-          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-          content: '字段6' + element.article_field6 + '台'
-        })
+       
       }
 
       $('#info_bar_box').html('')
@@ -841,7 +813,7 @@
           icon: 'path://M0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z',
 
           data: [{
-            name: '管理人员'
+            name: '人员'
           }, {
             name: '消防设备'
           }, {
@@ -1371,9 +1343,7 @@
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '消防设备' + list[i].article_device + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '易燃材料' + list[i].article_meta + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '人员' + list[i].article_users + '台' + '</div></div></div>';
-        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段4' + list[i].article_field4 + '台' + '</div></div></div>';
-        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段5' + list[i].article_field5 + '台' + '</div></div></div>';
-        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段6' + list[i].article_field6 + '台' + '</div></div></div>';
+      
 
 
 
