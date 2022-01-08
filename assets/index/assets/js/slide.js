@@ -20,6 +20,8 @@ function slide(elp, elc) {
 			slideHeight = $(elc).height();
 			msgSlide(loopTrueSlide);
 			return timer;
+		} else {
+			$(elc).css("top", "0px");
 		}
 	}
 

@@ -225,7 +225,8 @@
                   <img src="assets/index/assets/images/icon12.png"
                        alt="">
                 </div>
-                <span class="label">人员</span>
+                <span id="article_users_label"
+                      class="label">人员</span>
                 <span class="value"
                       id="article_users">0</span>
               </div>
@@ -270,8 +271,11 @@
   let floorId = ''
   let pathImg = ''
   let svgImg = ''
+  let currentTab = ''
   let currentChild = ''
   let childTimer = null
+
+  const api = 'http://tp.naisigo.com/fuchanye/web/index.php'
 
   // http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevel/article_id/5
 
@@ -280,7 +284,7 @@
     const imgArr = document.getElementsByClassName('smallImg_content_img')
     const layuiTab = document.getElementById('layui-tab')
     const bigimgImg = document.getElementById('bigimg-img')
-    let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test'
+    let url = api + '?s=/api/Test'
     let firstUrl = url + '/getBaseInfo'
     let secondUrl = url + '/getModifyInfo'
     if (name) {
@@ -296,7 +300,7 @@
       $("div").remove(".circle");
 
       // todo
-      $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevelChild/pid/' + floorId, (res) => {
+      $.get(api + '?s=/api/Test/getLevelChild/pid/' + floorId, (res) => {
         let { data } = JSON.parse(res)
         console.log('JSON.parse(res)1 :>> ', JSON.parse(res));
         // bigimgImg.src = svg_img
@@ -315,15 +319,15 @@
           )
 
           if (index === 0) {
-            currentChild = element
-            changeChild(1)
+            currentTab = element
+            onClickTab()
           }
         }
 
         let childrens = $('#tab_title').children()
         for (let index = 0; index < data.length; index++) {
           const element = data[index];
-          childrens[index].onclick = () => changeChild(1, element)
+          childrens[index].onclick = () => onClickTab(element)
         }
 
       })
@@ -336,7 +340,7 @@
         element.style.display = 'block'
       }
     } else {
-      $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getLevel/article_id/' + name, (res) => {
+      $.get(api + '?s=/api/Test/getLevel/article_id/' + name, (res) => {
         const { data: { svg_img }, position_list } = JSON.parse(res)
         svgImg = svg_img
         positionArr = position_list
@@ -365,6 +369,9 @@
         $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img2.png">应急消防救援</div>')
         $("#smallImg_item2").append(html2)
 
+        const article_users_label = document.getElementById('article_users_label')
+        article_users_label.innerHTML = '人员'
+
         $("#info-title").html(article_name + "厂区介绍");
       })
 
@@ -389,7 +396,7 @@
             time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
             content: '人员' + element.article_users + '台'
           })
-        
+
         }
 
         $('#info_bar_box').html('')
@@ -417,23 +424,91 @@
     layer.style.opacity = 1
   }
 
-  function changeChild(type = 1, item = null) {
-    console.log('currentChild :>> ', currentChild);
-    let data = currentChild
+  function onClickTab(item = null) {
+    let data = currentTab
     if (item) {
+      currentTab = item
       data = item
     }
 
-    if (type === 1) {
-      pathImg = data.image ? data.image.file_path : null
-      svgImg = data.svg ? data.svg.file_path : null
+    pathImg = data.image ? data.image.file_path : null
+    svgImg = data.svg ? data.svg.file_path : null
 
-      positionArr = data.position
-      level = 2
-      addCircle(true, level)
-    }
+    positionArr = data.position
+    addCircle(true, 2)
 
-    let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test'
+    let url = api + '?s=/api/Test'
+    let firstUrl = url + '/getTwoBaseInfo' + '/article_id/' + data.article_id
+    let secondUrl = url + '/getTwoModifyInfo/' + '/article_id/' + data.article_id
+
+    firstUrl = firstUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
+    secondUrl = secondUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
+
+    $.get(firstUrl, (res) => {
+      const { data: data1 } = JSON.parse(res)
+      const { article_device, article_meta, article_users, base_info, base_safe } = data1[0]
+
+      const articleDevice = document.getElementById('article_device')
+      const articleMeta = document.getElementById('article_meta')
+      const articleUsers = document.getElementById('article_users')
+      articleDevice.innerHTML = article_device
+      articleMeta.innerHTML = article_meta
+      articleUsers.innerHTML = article_users
+
+      const article_users_label = document.getElementById('article_users_label')
+      article_users_label.innerHTML = '面积'
+
+      let html1 = $.parseHTML(base_info)
+      $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img1.png">厂区简介</div>')
+      $("#smallImg_item1").append(html1)
+
+      let html2 = $.parseHTML(base_safe)
+      $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img2.png">应急消防救援</div>')
+      $("#smallImg_item2").append(html2)
+    })
+
+    $.get(secondUrl, (res) => {
+      const { data: data2 } = JSON.parse(res)
+      let arr = [];
+      for (let index = 0; index < data2.length; index++) {
+        const element = data2[index];
+        const time = Number(element.modify_at + '' + '000')
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '消防设备' + element.article_device + '台'
+        })
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '易燃材料' + element.article_meta + '台'
+        })
+        arr.push({
+          title: element.article_name,
+          time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
+          content: '人员' + element.article_users + '台'
+        })
+
+      }
+
+      $('#info_bar_box').html('')
+
+      for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+        $('#info_bar_box').append(
+          '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
+        )
+      }
+
+      clearInterval(childTimer)
+      childTimer = slide("#info_bar", "#info_bar_box");
+    })
+  }
+
+  function changeChild() {
+    let data = currentChild
+
+    let url = api + '?s=/api/Test'
     let firstUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
     let secondUrl = url + '/getChildModifyInfo' + '/article_id/' + data.article_id
 
@@ -443,7 +518,7 @@
     $.get(firstUrl, (res) => {
       const { data: data1 } = JSON.parse(res)
       console.log('data1 :>> ', data1);
-      const { article_device, article_meta, article_users, meta_content1, meta_content2 } = data1[0]
+      const { article_device, article_meta, article_users, base_info, base_safe } = data1[0]
 
       const articleDevice = document.getElementById('article_device')
       const articleMeta = document.getElementById('article_meta')
@@ -452,12 +527,12 @@
       articleMeta.innerHTML = article_meta
       articleUsers.innerHTML = article_users
 
-      let html1 = $.parseHTML(meta_content1)
-      $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
+      let html1 = $.parseHTML(base_info)
+      $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img1.png">厂区简介</div>')
       $("#smallImg_item1").append(html1)
 
-      let html2 = $.parseHTML(meta_content2)
-      $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
+      let html2 = $.parseHTML(base_safe)
+      $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img2.png">应急消防救援</div>')
       $("#smallImg_item2").append(html2)
     })
 
@@ -483,7 +558,7 @@
           time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
           content: '人员' + element.article_users + '台'
         })
-       
+
       }
 
       $('#info_bar_box').html('')
@@ -529,7 +604,7 @@
           )
         } else {
           $('#bigimg').append(
-            "<div class='circle' title='" + element.name + "' style='top: " + element.map_top + "px;left: " + element.map_left + "px;' onmouseenter='currentChild=" + JSON.stringify(element) + ";changeChild(2)'><div class='bac'></div><div class='chil1'></div><div class='chil2'></div></div>"
+            "<div class='circle' title='" + element.name + "' style='top: " + element.map_top + "px;left: " + element.map_left + "px;' onmouseenter='currentChild=" + JSON.stringify(element) + ";changeChild()'><div class='bac'></div><div class='chil1'></div><div class='chil2'></div></div>"
           )
         }
       }
@@ -758,7 +833,7 @@
   }
 
   function initChart(time = moment(new Date()).format('YYYY-MM-DD'), id) {
-    let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test/getCntInfo/time/' + time
+    let url = api + '?s=/api/Test/getCntInfo/time/' + time
     if (id) {
       url = url + '/article_id/' + id
     }
@@ -1236,7 +1311,8 @@
         done: (value, date, endDate) => {
           currentTime = value
           if (layerType === 1) {
-            changeChild(2)
+            // 第二层
+            onClickTab()
           } else {
             itemonClick(2, currentArticle, value)
           }
@@ -1245,7 +1321,7 @@
     });
 
 
-    $.get('http://tp.naisigo.com/fuchanye/web/index.php?s=/api/test/getList', (res) => {
+    $.get(api + '?s=/api/test/getList', (res) => {
       const { data } = JSON.parse(res)
       const poins = data.map(item => {
         return {
@@ -1343,7 +1419,7 @@
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '消防设备' + list[i].article_device + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '易燃材料' + list[i].article_meta + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '人员' + list[i].article_users + '台' + '</div></div></div>';
-      
+
 
 
 
