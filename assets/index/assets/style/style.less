@@ -504,18 +504,32 @@
   }
 }
 
-.changeImg {
+.changeImg_box {
   position: absolute;
-  width: 54px !important;
-  height: 54px !important;
-  left: 16px;
-  bottom: 16px;
-  cursor: pointer;
-  background: rgba(5, 112, 203, 0.9);
-  box-shadow: 0px 0px 29px 0px rgba(0, 0, 0, 0.99);
-  border-radius: 5px;
-  padding: 8px;
+  left: 10px;
+  bottom: 10px;
   z-index: 4;
+  display: flex;
+  
+  .item {
+    width: 85px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border-radius: .3125rem;
+
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
+
+  .active {
+    background: rgba(0, 138, 255, 0.3);
+  }
 }
 
 .smallImg {

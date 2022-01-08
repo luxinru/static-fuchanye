@@ -60,7 +60,7 @@
           </div>
           <div class="item"
                onclick="onSelectItem(3)">
-            <span class="select_item"></span> 管理人员
+            <span class="select_item"></span> 人员
           </div>
         </div>
         <div id="left_top_chart"
@@ -118,7 +118,7 @@
         </div>
         <div class="info">
           <div class="label info_label">0</div>
-          <div class="value">管理人员</div>
+          <div class="value">人员</div>
         </div>
       </div>
     </div>
@@ -171,10 +171,10 @@
               <img id="bigimg-img"
                    src=""
                    alt="">
-              <img class="changeImg"
-                   src="./assets/index/assets/images/change.png"
-                   alt=""
-                   onclick="addCircle(addtype, level)">
+              <div class="changeImg_box">
+                <div class="item active" onclick="addCircle(true, level)">实况图</div>
+                <div class="item" onclick="addCircle(false, level)">平面图</div>
+              </div>
             </div>
             <div class="smallImg">
               <div id="smallImg_item1"
@@ -303,87 +303,28 @@
         $('#tab_content').html('')
         for (let index = 0; index < data.length; index++) {
           const element = data[index];
+          console.log('element :>> ', element);
+          let file_path = element.image ? element.image.file_path : null
           $('#tab_title').append(
-            index === 0 ? "<li class='layui-this' onclick='currentChild=" + JSON.stringify(element) + ";changeChild()'>" + element.name + "</li>" : "<li onclick='currentChild=" + JSON.stringify(element) + ";changeChild()'>" + element.name + "</li>"
+            index === 0 ? "<li class='layui-this'>" + element.name + "</li>" : "<li>" + element.name + "</li>"
           )
           $('#tab_content').append(
-            index === 0 ? '<div class="layui-tab-item layui-show"><img src="' + element.image.file_path + '" alt=""></div>' : '<div class="layui-tab-item"><img src="' + element.image.file_path + '" alt=""></div>'
+            index === 0 ? '<div class="layui-tab-item layui-show"><img src="' + file_path + '" alt=""></div>' : '<div class="layui-tab-item"><img src="' + file_path + '" alt=""></div>'
           )
 
           if (index === 0) {
             currentChild = element
-            changeChild()
+            changeChild(1)
           }
         }
 
-
-      })
-
-      $.get(firstUrl, (res) => {
-        console.log('JSON.parse(res) :>> ', JSON.parse(res));
-        const { data: data1 } = JSON.parse(res)
-        const { meta_content1, meta_content2, article_name } = data1[0]
-
-        let html1 = $.parseHTML(meta_content1)
-        $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
-        $("#smallImg_item1").append(html1)
-
-        let html2 = $.parseHTML(meta_content2)
-        $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
-        $("#smallImg_item2").append(html2)
-
-        $("#info-title").html(article_name + "厂区建筑物介绍");
-      })
-
-      $.get(secondUrl, (res) => {
-        const { data: data2 } = JSON.parse(res)
-        let arr = [];
-        for (let index = 0; index < data2.length; index++) {
-          const element = data2[index];
-          const time = Number(element.modify_at + '' + '000')
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '消防设备' + element.article_device + '台'
-          })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '易燃材料' + element.article_meta + '台'
-          })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '管理人员' + element.article_users + '台'
-          })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '字段4' + element.article_field4 + '台'
-          })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '字段5' + element.article_field5 + '台'
-          })
-          arr.push({
-            title: element.article_name,
-            time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '字段6' + element.article_field6 + '台'
-          })
+        let childrens = $('#tab_title').children()
+        for (let index = 0; index < data.length; index++) {
+          const element = data[index];
+          childrens[index].onclick = () => changeChild(1, element)
         }
 
-        $('#info_bar_box').html('')
 
-        for (let index = 0; index < arr.length; index++) {
-          const element = arr[index];
-          $('#info_bar_box').append(
-            '<div class="info_bar_item"><span></span><div class="info_bar_info"><div class="label">' + element.title + '</div><div class="value">' + element.time + ' 更新' + element.content + '</div></div></div>'
-          )
-        }
-
-        clearInterval(childTimer)
-        childTimer = slide("#info_bar", "#info_bar_box");
       })
 
       layuiTab.style.display = 'flex';
@@ -445,7 +386,7 @@
           arr.push({
             title: element.article_name,
             time: moment(time).format('YYYY-MM-DD HH:mm:ss'),
-            content: '管理人员' + element.article_users + '台'
+            content: '人员' + element.article_users + '台'
           })
           arr.push({
             title: element.article_name,
@@ -489,13 +430,16 @@
     layer.style.opacity = 1
   }
 
-  function changeChild(type = 1) {
+  function changeChild(type = 1, item = null) {
     console.log('currentChild :>> ', currentChild);
     let data = currentChild
+    if (item) {
+      data = item
+    }
 
     if (type === 1) {
-      pathImg = data.image.file_path
-      svgImg = data.svg.file_path
+      pathImg = data.image ? data.image.file_path : null
+      svgImg = data.svg ? data.svg.file_path : null
 
       positionArr = data.position
       level = 2
@@ -583,15 +527,22 @@
     })
   }
 
-  addtype = true
   let viewer = ''
   let level = 1
 
   function addCircle(type, level = 1) {
     $("div").remove(".circle");
-    addtype = !type
     const bigimgImg = document.getElementById('bigimg-img')
+    const childrens = $('.changeImg_box').children()
     if (type) {
+      for (let index = 0; index < childrens.length; index++) {
+        const element = childrens[index];
+        if (index === 0) {
+          element.setAttribute('class', 'item active')
+        } else {
+          element.setAttribute('class', 'item')
+        }
+      }
       if (viewer) {
         viewer.destroy()
       }
@@ -610,6 +561,15 @@
         }
       }
     } else {
+      for (let index = 0; index < childrens.length; index++) {
+        const element = childrens[index];
+        if (index === 0) {
+          element.setAttribute('class', 'item')
+        } else {
+          element.setAttribute('class', 'item active')
+        }
+      }
+
       bigimgImg.src = svgImg
       viewer = new Viewer(document.getElementById('bigimg-img'), {
         inline: true,
@@ -958,7 +918,7 @@
           },
         }],
         series: [{
-          name: '管理人员',
+          name: '人员',
           type: 'line',
           symbol: 'circle', // 默认是空心圆（中间是白色的），改成实心圆
           showAllSymbol: true,
@@ -1106,7 +1066,7 @@
         name: '易燃材料',
         value: sum_meta,
       }, {
-        name: '管理人员',
+        name: '人员',
         value: sum_user,
       }];
       radius = ['50%', '54%'];
@@ -1409,7 +1369,7 @@
 
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '消防设备' + list[i].article_device + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '易燃材料' + list[i].article_meta + '台' + '</div></div></div>';
-        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '管理人员' + list[i].article_users + '台' + '</div></div></div>';
+        html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '人员' + list[i].article_users + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段4' + list[i].article_field4 + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段5' + list[i].article_field5 + '台' + '</div></div></div>';
         html += '<div class="new_item"><span></span><div class="new_item_info"><div class="label">' + list[i].article_name + '</div><div class="value">' + create_time + ' 更新' + '字段6' + list[i].article_field6 + '台' + '</div></div></div>';
