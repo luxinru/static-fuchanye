@@ -448,7 +448,7 @@
 
     let url = 'http://tp.naisigo.com/fuchanye/web/index.php?s=/api/Test'
     let firstUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
-    let secondUrl = url + '/getChildBaseInfo' + '/article_id/' + data.article_id
+    let secondUrl = url + '/getChildModifyInfo' + '/article_id/' + data.article_id
 
     firstUrl = firstUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
     secondUrl = secondUrl + '/time/' + moment(currentTime ? currentTime : new Date()).format('YYYY-MM-DD')
