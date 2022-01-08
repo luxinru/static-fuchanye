@@ -172,8 +172,10 @@
                    src=""
                    alt="">
               <div class="changeImg_box">
-                <div class="item active" onclick="addCircle(true, level)">实况图</div>
-                <div class="item" onclick="addCircle(false, level)">平面图</div>
+                <div class="item active"
+                     onclick="addCircle(true, level)">实况图</div>
+                <div class="item"
+                     onclick="addCircle(false, level)">平面图</div>
               </div>
             </div>
             <div class="smallImg">
@@ -324,7 +326,6 @@
           childrens[index].onclick = () => changeChild(1, element)
         }
 
-
       })
 
       layuiTab.style.display = 'flex';
@@ -456,7 +457,7 @@
     $.get(firstUrl, (res) => {
       const { data: data1 } = JSON.parse(res)
       console.log('data1 :>> ', data1);
-      const { article_device, article_meta, article_users, base_info, base_safe } = data1[0]
+      const { article_device, article_meta, article_users, meta_content1, meta_content2 } = data1[0]
 
       const articleDevice = document.getElementById('article_device')
       const articleMeta = document.getElementById('article_meta')
@@ -465,12 +466,12 @@
       articleMeta.innerHTML = article_meta
       articleUsers.innerHTML = article_users
 
-      let html1 = $.parseHTML(base_info)
-      $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img1.png">厂区简介</div>')
+      let html1 = $.parseHTML(meta_content1)
+      $("#smallImg_item1").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
       $("#smallImg_item1").append(html1)
 
-      let html2 = $.parseHTML(base_safe)
-      $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img2.png">应急消防救援</div>')
+      let html2 = $.parseHTML(meta_content2)
+      $("#smallImg_item2").html('<div class="smallImg_title"><img src="./assets/index/assets/images/img3.png">图文信息</div>')
       $("#smallImg_item2").append(html2)
     })
 
